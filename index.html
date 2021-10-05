@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blanchard</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+    <link rel="stylesheet" href="styles/choices.min.css">
+    <!-- <link rel="stylesheet" href="styles/swiper-bundle.css">
+    <link rel="stylesheet" href="styles/swiper-bundle.min.css"> -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="styles/style.css">
+    <script defer src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+    <script defer src="src/choices.min.js"></script>
+    <!-- <script defer src="src/swiper-bundle.min.js"></script> -->
+    <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script defer src="src/index.js"></script>
+    <noscript>
+        <style>
+            .simplebar-content-wrapper {
+                overflow: auto;
+            }
+        </style>
+    </noscript>
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__top-menu">
+        <div class="header__container container flex">
+                <div class="header__burger" id="burger-btn">
+                    <span></span>
+                </div>
+                <a href="#"><img class="header__logo" src="img/logo.svg" alt="Логотип Blanchard"></a>
+                <nav class="header__nav nav" id="burger-menu">
+                    <ul class="header__nav-list flex">
+                        <li class="header__nav-item"><a href="#" class="header__link link">О нас</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">Галерея</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">Каталог</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">События</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">Издания</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">Проекты</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">Контакты</a></li>
+                    </ul>
+                    <a href="#" class="header__enter outline-focus header__enter--burger">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" />
+                        </svg>
+                        Войти
+                    </a>
+                </nav>
+                <a href="#" class="header__enter link">
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" />
+                    </svg>
+                    Войти
+                </a>
+                <button class="header__search">
+                    <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)" fill="white"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z" fill="white"/>
+                        </svg>
+                </button>
+                        </div>
+            </div>
+        <div class="header__btm-menu">
+            <div class="header__btm-menu-container container flex">
+                <nav class="header__bottom-nav nav">
+                    <ul class="header__dropdown-list flex" >
+                        <li class="header__dropdown-item dropdown-item" data-dropdown>
+                                <button class="dropdown-item__btn link" data-dropdown-button>
+                                    Реализм
+                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11 1L6 6L1 1" />
+                                    </svg>
+                                </button>
+                            <ul class="dropdown-item__content" data-simplebar>
+                                <li class="dropdown-item__subitem real1">Тинторетто</li>
+                                <li class="dropdown-item__subitem real2">Фридрих</li>
+                                <li class="dropdown-item__subitem real3">Леонардо</li>
+                                <li class="dropdown-item__subitem real4">Верроккьо</li>
+                                <li class="dropdown-item__subitem real1">Граначчи, Франческо</li>
+                                <li class="dropdown-item__subitem real2">Грегорио ди Чекко</li>
+                                <li class="dropdown-item__subitem real3">Джованни да Удине</li>
+                                <li class="dropdown-item__subitem real4">Джованни ди Паоло</li>
+                                <li class="dropdown-item__subitem real1">Джорджоне</li>
+                            </ul>
+                        </li>
+                        <li class="header__dropdown-item dropdown-item" data-dropdown>
+                            <button class="dropdown-item__btn link" data-dropdown-button>
+                                Импрессионизм
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1L6 6L1 1" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-item__content" data-simplebar>
+                                <li class="dropdown-item__subitem expr1">Моне</li>
+                                <li class="dropdown-item__subitem expr2">Сислей</li>
+                                <li class="dropdown-item__subitem expr3">Мане</li>
+                                <li class="dropdown-item__subitem expr4">Ренуар</li>
+                                <li class="dropdown-item__subitem expr1">Моне</li>
+                                <li class="dropdown-item__subitem expr2">Сислей</li>
+                                <li class="dropdown-item__subitem expr3">Мане</li>
+                                <li class="dropdown-item__subitem expr4">Ренуар</li>
+                            </ul>
+                        </li>
+                        <li class="header__dropdown-item dropdown-item" data-dropdown>
+                            <button class="dropdown-item__btn link" data-dropdown-button>
+                                Постимпрессионизм
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1L6 6L1 1" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-item__content" data-simplebar>
+                                <li class="dropdown-item__subitem post1">Ван Гог</li>
+                                <li class="dropdown-item__subitem post2">Сезанн</li>
+                                <li class="dropdown-item__subitem post3">Гоген</li>
+                                <li class="dropdown-item__subitem post4">Сёра</li>
+                                <li class="dropdown-item__subitem post1">Ван Гог</li>
+                                <li class="dropdown-item__subitem post2">Сезанн</li>
+                                <li class="dropdown-item__subitem post3">Гоген</li>
+                                <li class="dropdown-item__subitem post4">Сёра</li>
+                            </ul>
+                        </li>
+                        <li class="header__dropdown-item dropdown-item" data-dropdown>
+                            <button class="dropdown-item__btn link" data-dropdown-button>
+                                Авангард
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1L6 6L1 1" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-item__content" data-simplebar>
+                                <li class="dropdown-item__subitem avan1">Кандинский</li>
+                                <li class="dropdown-item__subitem avan2">Маринетти</li>
+                                <li class="dropdown-item__subitem avan3">Малевич</li>
+                                <li class="dropdown-item__subitem avan4">Пикассо</li>
+                                <li class="dropdown-item__subitem avan1">Кандинский</li>
+                                <li class="dropdown-item__subitem avan2">Маринетти</li>
+                                <li class="dropdown-item__subitem avan3">Малевич</li>
+                                <li class="dropdown-item__subitem avan4">Пикассо</li>
+                            </ul>
+                        </li>
+                        <li class="header__dropdown-item dropdown-item" data-dropdown>
+                            <button class="dropdown-item__btn link" data-dropdown-button>
+                                Футуризм
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1L6 6L1 1" />
+                                </svg>
+                            </button>
+                            <ul class="dropdown-item__content" id="dropdown-content" data-simplebar>
+                                <li class="dropdown-item__subitem fut1">Карра</li>
+                                <li class="dropdown-item__subitem fut2">Прателла</li>
+                                <li class="dropdown-item__subitem fut3">Северини</li>
+                                <li class="dropdown-item__subitem fut4">Балла</li>
+                                <li class="dropdown-item__subitem fut1">Карра</li>
+                                <li class="dropdown-item__subitem fut2">Прателла</li>
+                                <li class="dropdown-item__subitem fut3">Северини</li>
+                                <li class="dropdown-item__subitem fut4">Балла</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="header__search-menu search-menu">
+                    <form class="search-menu__form form flex">
+                        <button type="submit" class="search-menu__btn">
+                            <svg width="23" height="22" viewBox="0 0 23 22" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="6.8678" height="1.71695"
+                                    transform="matrix(-0.718931 0.695081 0.718931 0.695081 4.9375 15.6534)"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M12.0969 18C7.53041 18 3.99692 14.3229 3.99692 10C3.99692 5.67715 7.53041 2 12.0969 2C16.6634 2 20.1969 5.67715 20.1969 10C20.1969 14.3229 16.6634 18 12.0969 18ZM12.0969 20C6.57408 20 2.09692 15.5228 2.09692 10C2.09692 4.47715 6.57408 0 12.0969 0C17.6198 0 22.0969 4.47715 22.0969 10C22.0969 15.5228 17.6198 20 12.0969 20Z"
+                                    fill="white" />
+                            </svg>
+                        </button>
+                        <input aria-label="Поиск по сайту" type="search" class="search-menu__text" placeholder="Поиск по сайту">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="hero">
+            <h1 class="main-header">Blanchard художественная галерея</h1>
+            <div class="hero__container container">
+                <div class="hero__swiper">
+                    <div class="swiper-wrapper">
+                        <div class="hero__background swiper-slide hero-img1"></div>
+                        <div class="hero__background swiper-slide hero-img2"></div>
+                        <div class="hero__background swiper-slide hero-img3"></div>
+                    </div>
+                </div>
+                <h2 class="hero__title heading">Прикоснитесь к&nbsp;прекрасному</h2>
+                <p class="hero__descr">
+                    Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт
+                    предпосылки для новых предложений.
+                </p>
+                <div class="hero__btn"><button class="btn outline-focus">Подписаться на&nbsp;рассылку</button></div>
+            </div>
+        </section>
+        <section class="about-us">
+            <div class="about-us__container container">
+                <h2 class="about-us__title heading">О нас</h2>
+                <p class="about-us__text">
+                    Ясность нашей позиции очевидна: семантический разбор внешних противодействий однозначно определяет
+                    каждого участника как способного принимать собственные решения касаемо распределения внутренних
+                    резервов и&nbsp;ресурсов. Не&nbsp;следует, однако, забывать, что высококачественный прототип
+                    будущего проекта влечет за&nbsp;собой процесс внедрения и&nbsp;модернизации модели развития.
+                    Повседневная практика показывает, что высокое качество позиционных исследований создаёт
+                    необходимость включения в&nbsp;производственный план целого ряда внеочередных мероприятий
+                    с&nbsp;учётом комплекса распределения внутренних резервов и&nbsp;ресурсов. В&nbsp;рамках
+                    спецификации современных стандартов, действия представителей оппозиции набирают популярность среди
+                    определенных слоев населения, а&nbsp;значит, должны быть разоблачены.
+                </p>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="gallery__container container flex">
+                <div class="gallery__left">
+                    <h2 class="gallery__title heading">Галерея</h2>
+                    <h3 class="gallery__subtitle">Фильтр:</h3>
+                    <div class="gallery__select select">
+                        <select aria-label="Фильтрация по виду исскуства" name="select" id="selectCustom">
+                            <option value="art" class="select__item">Живопись</option>
+                            <option value="paint" class="select__item">Рисунок</option>
+                            <option value="sculpture" class="select__item">Скульптура</option>
+                        </select>
+                    </div>
+                    <p class="gallery__note">
+                        Вам предоставляется 10&nbsp;бесплатных скачиваний. Для увеличения количества скачиваний <a
+                            href="#" class="link gallery__link">авторизуйтесь</a>, либо воспользуйтесь лицензией.
+                    </p>
+                </div>
+                <div class="gallery__swiper gallery-swiper">
+                        <div class="gallery-swiper__nav flex">
+                            <button aria-label="Предыдущий слайд" class="gallery-swiper__arrow-prev">
+                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path class="svg-circle"
+                                        d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
+                                    <path class="svg-stroke" d="M16 20L11 15L16 10" />
+                                </svg>
+                            </button>
+                            <div class="gallery-swiper__pagination"></div>
+                            <button aria-label="Следующий слайд" class="gallery-swiper__arrow-next">
+                                <svg width="30" height="30" fill="none" viewBox="0 0 30 30"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path class="svg-circle"
+                                        d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
+                                    <path class="svg-stroke" d="M14 20L19 15L14 10" />
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <ul class="swiper-wrapper gallery-art">
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard1.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT1.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS1.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM1.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard2.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT2.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS2.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM2.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard3.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT3.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS3.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM3.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard4.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT4.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS4.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM4.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard5.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT5.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS5.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM5.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard6.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT6.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS6.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM6.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard7.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT7.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS7.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM7.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard8.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT8.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS8.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM8.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard9.jpg">
+                                        <source media="(min-width: 924px)" srcset="img/gallery/gCadrT9.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS9.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM9.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard10.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT10.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS10.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM10.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard11.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT11.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS11.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM11.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard12.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT12.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS12.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM12.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard13.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT13.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS13.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM13.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard14.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT14.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS14.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM14.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard15.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT15.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS15.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM15.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard16.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT16.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS16.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM16.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard17.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT17.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS17.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM17.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard18.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT18.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS18.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM18.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard19.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT19.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS19.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM19.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard20.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT20.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS20.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM20.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard21.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT21.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS21.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM21.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard22.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT22.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS22.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM22.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard23.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT23.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS23.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM23.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class = "gallery-art_btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard24.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT24.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS24.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM24.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                        </ul>
+
+                </div>
+            </div>
+        </section>
+        <section class="catalog">
+            <div class="catalog__container container">
+                <div class="catalog__top flex">
+                    <h2 class="catalog__title heading">Каталог</h2>
+                    <!-- <ul class="catalog__countries countries flex">
+                        <li class="countries__item france" data-path="1" aria-label="Франция"></li>
+                        <li class="countries__item ger" data-path="2" aria-label="Германия"></li>
+                        <li class="countries__item italy" data-path="3" aria-label="Италия"></li>
+                        <li class="countries__item rus" data-path="4" aria-label="Россия"></li>
+                        <li class="countries__item belg" data-path="5" aria-label="Бельгия"></li>
+                    </ul> -->
+                </div>
+                <p class="catalog__descr">
+                    Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского
+                    типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали.
+                    Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство,
+                    нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально
+                    разнесены на&nbsp;независимые элементы.
+                </p>
+                <div class="catalog__artist-block">
+                    <img src="#" alt="Имя художника">
+                    <h4 class="heading catalog__artist-name">Доменико Гирландайо</h4>
+                    <div class="catalog__artist-descr">
+                        <span class="lives">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</span>
+                        Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии,
+                        которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный
+                        Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов,
+                        в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских
+                        персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того
+                        времени).
+                    </div>
+                </div>
+                <div class="catalog__artist-years">
+                    <ul class="catalog__artists-list artists-list">
+                        <li class="artists-list__item">
+                            C 1400 по 1499 гг.
+                        </li>
+                        <li class="artists-list__item">
+                            C 1500 по 1599 гг.
+                        </li>
+                        <li class="artists-list__item">
+                            C 1600 по 1699 гг.
+                        </li>
+                        <li class="artists-list__item">
+                            C 1700 по 1799 гг.
+                        </li>
+                        <li class="artists-list__item">
+                            C 1800 по 1899 гг.
+                        </li>
+                        <li class="artists-list__item">
+                            C 1900 по 1999 гг.
+                        </li>
+                        <li class="artists-list__item">
+                            C 2000 г.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section class="events">
+            <div class="container events__container">
+                <h2 class="heading events__title">События</h2>
+                <ul class="events__list">
+                    <li class="events__item">
+                        <img src="#" alt="Книжная гравюра в живом восприятии" class="events__img">
+                        <div class="events__date">Музей им. Щусева
+                            с&nbsp;20&nbsp;марта по&nbsp;30&nbsp;апреля</div>
+                        <h3 class="heading events__subtitle">Книжная гравюра в&nbsp;живом восприятии</h3>
+                        <p class="events__descr">
+                            Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной
+                            династии, которую продолжили его брат Давид и&nbsp;сын Ридольфо.
+                        </p>
+                        <a href="#" target="_blank" class="events__link link">Подробнее</a>
+                    </li>
+                    <li class="events__item">
+                        <img src="#" alt="«Открытая дискуссия». Дмитрий Петров и Сергей Ильин." class="events__img">
+                        <div class="events__date">ММОМА
+                            24&nbsp;марта 19:00</div>
+                        <h3 class="heading events__subtitle">&laquo;Открытая дискуссия&raquo;. Дмитрий Петров
+                            и&nbsp;Сергей Ильин.</h3>
+                        <p class="events__descr">
+                            Высокий уровень вовлечения представителей целевой аудитории является четким доказательством
+                            простого факта.
+                        </p>
+                        <a href="#" target="_blank" class="events__link link">Подробнее</a>
+                    </li>
+                    <li class="events__item">
+                        <img src="#" alt="Книжная гравюра в живом восприятии" class="events__img">
+                        <div class="events__date">Еврейский музей
+                            с&nbsp;31&nbsp;марта по&nbsp;21&nbsp;апреля</div>
+                        <h3 class="heading events__subtitle">Выставка &laquo;Формация 2020&raquo;</h3>
+                        <p class="events__descr">
+                            Идейные соображения высшего порядка, а&nbsp;также современная методология разработки играет
+                            важную роль в&nbsp;формировании глубокомысленных рассуждений.
+                        </p>
+                        <a href="#" target="_blank" class="events__link link">Подробнее</a>
+                    </li>
+                </ul>
+                <button class="btn events__btn">Все события</button>
+            </div>
+        </section>
+        <section class="publisers">
+            <div class="container publisers__container">
+                <h2 class="publisers__title heading">Издания</h2>
+                <div class="publisers__categories categories">
+                    <h3 class="heading categories__title">Категории</h3>
+                    <ul class="categories__list">
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Бестселлеры
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Искусство
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Архитектура
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Дизайн
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Мода
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Детям
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> художественная литература
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Публицистика
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Путеводители
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Философия
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Учебная литература
+                            </label>
+                        </li>
+                        <li class="categories__item">
+                            <label class="checkbox-label">
+                                <input type="checkbox" class="checkbox" required> Журналы и газеты
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="publisers__cost cost">
+                    <h3 class="heading cost__title">Цена</h3>
+                    <div class="cost__input">
+                        От <input type="number"> до <input type="number"> руб.
+                    </div>
+                </div>
+                <div class="publisers__slider">
+                    <!-- here's slider soon -->
+                </div>
+            </div>
+        </section>
+        <section class="projects">
+            <h2 class="projects__title heading">Проекты</h2>
+            <p class="projects__text">
+                Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности
+                однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые
+                государства смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за
+                чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно-пропагандистское
+                обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности
+                принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены
+                исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых предпосылок. Банальные,
+                но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас
+                к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными
+                данными до&nbsp;степени совершенной неузнаваемости. Подробнее: <a href="#" target="_blank"
+                    class="link projects__link">blanchard-art.ru/projects/about</a>
+            </p>
+            <h3 class="projects__partners">Партнёры проектов</h3>
+            <div class="projects__slider">
+                <!-- slider will be soon -->
+            </div>
+        </section>
+        <!-- <section class="contacts">
+            <div class="contacts__container container">
+                <h2 class="contacts__title heading">Контакты</h2>
+                <div class="contacts__address">
+                    Шоурум &#8470;&nbsp;4
+                    Леонтьевский переулок, дом 5/1
+                </div>
+                <form action="https://jsonplaceholder.typicode.com/posts" autocomplete="on" method="post"
+                    class="form contacts__form">
+                    <div class="contacts__mask-container">
+                        <label class="contacts__label" for="#">
+                            Заказать обратный звонок
+                            <input type="text">
+                            <input type="tel" name="phone" id="phone">
+                        </label>
+                        <button class="contacts__btn btn">Заказать</button>
+                    </div>
+                </form>
+                <div class="contacts__social social">
+                    Связаться в один клик
+                    <a href="#" class="social__icon">
+                
+                    </a>
+                    <a href="#" class="social__icon">
+                
+                    </a>
+                </div>
+                <div class="contacts__map">
+                
+                </div>
+            </div>
+        </section> -->
+    </main>
+    <footer class="footer">
+        <div class="container footer__container">
+            <img src="img/logo.svg" alt="Blanchard - художественная галерея">
+        </div>
+        <div class="footer__social social">
+            <ul class="social__list">
+                <li class="social__item">
+                    <a href=""></a>
+                </li>
+                <li class="social__item">
+                    <a href=""></a>
+                </li>
+                <li class="social__item">
+                    <a href=""></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>
