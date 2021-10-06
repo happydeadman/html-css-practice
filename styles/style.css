@@ -427,7 +427,7 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   top: 0;
   left: 0;
   width: 100%;
-  height: 800px;
+  height: 100%;
   z-index: -1;
   animation: hero-anim 3s alternate linear infinite;
 }
@@ -782,7 +782,7 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   position: unset;
 }
 .svg-circle {
-  transition-property: fill stroke;
+  transition-property: fill;
   transition-timing-function: ease;
   transition-duration: .3s;
 }
@@ -877,6 +877,9 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
     cursor: pointer;
     overflow: visible;
     z-index: 4;
+  }
+  .header__nav {
+    margin-right: 0;
   }
   .header__burger span,
   .header__burger::before, 
@@ -1034,6 +1037,9 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
     padding: 81px 50px 145px 50px;
     flex-direction: column;
   }
+  .gallery__left {
+    margin-right: 0;
+  }
   .gallery__select {
     max-width: 280px;
     margin-bottom: 24px;
@@ -1047,24 +1053,153 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   }
 }
 @media screen and (max-width: 576px) {
+  .header__container {
+    padding: 10px 15px 10px 15px;
+  }
   .header__logo {
-    width: 96px;
+    width: 99px;
+    height: 23px;
+  }
+  .header__burger {
+    width: 25px;
+    height: 18px;
+  }
+  .header__burger span,
+  .header__burger::before, 
+  .header__burger::after {
+    height: 2px;
+  }
+  .header__burger span {
+    width: 16px;
+    top: 8px;
+  }
+  .header__burger.close::before,
+  .header__burger.close span {
+    width: 19px;
+    top: 8px;
+  }
+  .header__burger::after {
+    width: 10px;
+  }
+  .header__search svg {
+    width: 18px;
+    height: 18px;
+  }
+  .header__link {
+    font-size: 16px;
+    line-height: 32px;
+  }
+  .header__nav {
+    padding-left: 15px;
+    padding-top: 46px;
+  }
+  .header__nav-list {
+    margin-bottom: 17px;
+  }
+  .header__enter--burger {
+    padding: 6px 31px;
+    font-size: 12px;
+  }
+  .header__enter--burger svg {
+    width: 9px;
+    height: 9px;
+  }
+  .hero-img1{
+    background-image: url(../img/hero/hero-imgm1.jpg);
+  }
+  .hero-img2{
+    background-image: url(../img/hero/hero-imgm2.jpg);
+  }
+  .hero-img3{
+    background-image: url(../img/hero/hero-imgm3.jpg);
+  }
+  .hero__container {
+    display: flex;
+    padding: 20px 29px 44px 30px;;
+    flex-direction: column;
+    align-items: center;
+  }
+  .hero__btn {
+    margin-bottom: 0;
+  }
+  .btn--small {
+    font-size: 12px;
+    line-height: 16px;
+    padding: 9px 16px;
+  }
+  .hero__title {
+    margin-top: 11px;
+    margin-bottom: 11px;
+    min-width: 100%;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+  }
+  .hero__descr {
+    margin-bottom: 38px;
+    font-size: 12px;
+    line-height: 17px;
+    text-align: center;
+    letter-spacing: unset;
+  }
+  .about-us__container {
+    padding: 10px 15px 10px 15px;
+  }
+  .about-us__title {
+    margin-top: 43px;
+    margin-bottom: 11px;
+    font-size: 28px;
+    line-height: 38px;
+  }
+  .about-us__text {
+    margin-bottom: 31px;
+    font-size: 14px;
+    line-height: 28px;
+  }
+  .gallery__container {
+    padding: 50px 15px 221px 15px;
+  }
+  .gallery__title {
+    margin-bottom: 11px;
+    font-size: 28px;
+    line-height: 38px;  
+  }
+  .gallery__select {
+    max-width: 100%;
+  }
+  .gallery__subtitle {
+    margin: 0 0 4px;
   }
   .gallery__swiper {
+    padding-top: 0;
     height: auto;
-    
     display: flex;
+    align-items: center;
     flex-direction: column;
+  }
+  .gallery-art {
+    height: 367px;
   }
   .gallery__swiper .gallery-art {
     order: 1;
-    margin-bottom: 40px;
+    margin-bottom: 17px;
+  }
+  .gallery-art__item {
+    height: 100%;
   }
   .gallery-swiper__nav {
     order: 2;
     margin-bottom: 0;
   }
+  .gallery-swiper__pagination {
+    transform: translateY(2px);
+  }
+  .gallery__note {
+    margin-bottom: 0;
+    bottom: 42px;
+    max-width: 90%;
+  }
   .gallery__left {
-    margin-bottom: 40px;
+    margin-bottom: 16px;
   }
 }
