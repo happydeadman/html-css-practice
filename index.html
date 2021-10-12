@@ -30,11 +30,11 @@
 <body>
     <header class="header">
         <div class="header__top-menu">
-        <div class="header__container container flex">
+        <div class="header__container container flex" id="searchOverlay">
                 <div class="header__burger" id="burger-btn">
                     <span></span>
                 </div>
-                <a href="#"><img class="header__logo" src="img/logo.svg" alt="Логотип Blanchard"></a>
+                <a class="header__logo" id="logo" href="#"><img class="header__logo-img" src="img/logo.svg" alt="Логотип Blanchard"></a>
                 <nav class="header__nav nav" id="burger-menu">
                     <ul class="header__nav-list flex">
                         <li class="header__nav-item"><a href="#" class="header__link link">О нас</a></li>
@@ -60,12 +60,23 @@
                     </svg>
                     Войти
                 </a>
-                <button class="header__search">
-                    <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)" fill="white"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z" fill="white"/>
+                <div class="header__fake-search" id="fakeSearchBtn">
+                    <svg width="30" height="29" viewBox="0 0 30 29" xmlns="http://www.w3.org/2000/svg">
+                        <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)"/>
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z"/>
                         </svg>
-                </button>
+                </div>
+                <div class="header__search-top search-top">
+                    <form class="search-top__form form flex">
+                        <button type="submit" class="search-top__btn" id="searchBtn">
+                            <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)" fill="white"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z" fill="white"/>
+                                </svg>
+                        </button>
+                        <input aria-label="Поиск по сайту" type="search" id="inputSearch" class="search-top__search-text search-text">
+                    </form>
+                </div>
                         </div>
             </div>
         <div class="header__btm-menu">
@@ -183,7 +194,7 @@
                                     fill="white" />
                             </svg>
                         </button>
-                        <input aria-label="Поиск по сайту" type="search" class="search-menu__text" placeholder="Поиск по сайту">
+                        <input aria-label="Поиск по сайту" type="search" class="search-menu__text search-text" placeholder="Поиск по сайту">
                     </form>
                 </div>
             </div>
@@ -241,294 +252,296 @@
                             href="#" class="link gallery__link">авторизуйтесь</a>, либо воспользуйтесь лицензией.
                     </p>
                 </div>
-                <div class="gallery__swiper gallery-swiper">
-                        <div class="gallery-swiper__nav flex">
-                            <button aria-label="Предыдущий слайд" class="gallery-swiper__arrow-prev">
-                                <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path class="svg-circle"
-                                        d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
-                                    <path class="svg-stroke" d="M16 20L11 15L16 10" />
-                                </svg>
-                            </button>
-                            <div class="gallery-swiper__pagination"></div>
-                            <button aria-label="Следующий слайд" class="gallery-swiper__arrow-next">
-                                <svg width="30" height="30" fill="none" viewBox="0 0 30 30"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path class="svg-circle"
-                                        d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
-                                    <path class="svg-stroke" d="M14 20L19 15L14 10" />
-                                </svg>
-                            </button>
-                        </div>
-                        
-                        <ul class="swiper-wrapper gallery-art">
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard1.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT1.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS1.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM1.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard2.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT2.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS2.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM2.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard3.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT3.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS3.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM3.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard4.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT4.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS4.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM4.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard5.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT5.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS5.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM5.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard6.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT6.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS6.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM6.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard7.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT7.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS7.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM7.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard8.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT8.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS8.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM8.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard9.jpg">
-                                        <source media="(min-width: 924px)" srcset="img/gallery/gCadrT9.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS9.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM9.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard10.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT10.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS10.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM10.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard11.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT11.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS11.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM11.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard12.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT12.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS12.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM12.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard13.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT13.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS13.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM13.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard14.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT14.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS14.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM14.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard15.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT15.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS15.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM15.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard16.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT16.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS16.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM16.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard17.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT17.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS17.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM17.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard18.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT18.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS18.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM18.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard19.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT19.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS19.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM19.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard20.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT20.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS20.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM20.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard21.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT21.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS21.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM21.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard22.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT22.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS22.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM22.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard23.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT23.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS23.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM23.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                            <li class="swiper-slide gallery-art__item">
-                                <button class = "gallery-art_btn">
-                                    <picture>
-                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard24.jpg">
-                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT24.jpg">
-                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS24.jpg">
-                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM24.jpg">
-                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                    </picture>
-                                </button>
-                            </li>
-                        </ul>
-
+                <div class="gallery__swiper-section flex">
+                    <div class="gallery-swiper__nav flex">
+                        <button aria-label="Предыдущий слайд" class="gallery-swiper__arrow-prev">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path class="svg-circle"
+                                    d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
+                                <path class="svg-stroke" d="M16 20L11 15L16 10" />
+                            </svg>
+                        </button>
+                        <div class="gallery-swiper__pagination"></div>
+                        <button aria-label="Следующий слайд" class="gallery-swiper__arrow-next">
+                            <svg width="30" height="30" fill="none" viewBox="0 0 30 30"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path class="svg-circle"
+                                    d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
+                                <path class="svg-stroke" d="M14 20L19 15L14 10" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="gallery__swiper gallery-swiper">
+                    
+                    
+                            <ul class="swiper-wrapper gallery-art">
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard1.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT1.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS1.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM1.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard2.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT2.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS2.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM2.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard2.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard3.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT3.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS3.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM3.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard3.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard4.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT4.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS4.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM4.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard4.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard5.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT5.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS5.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM5.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard5.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard6.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT6.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS6.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM6.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard6.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard7.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT7.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS7.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM7.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard7.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard8.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT8.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS8.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM8.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard8.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard9.jpg">
+                                            <source media="(min-width: 924px)" srcset="img/gallery/gCadrT9.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS9.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM9.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard9.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard10.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT10.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS10.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM10.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard10.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard11.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT11.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS11.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM11.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard11.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard12.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT12.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS12.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM12.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard12.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard13.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT13.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS13.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM13.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard13.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard14.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT14.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS14.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM14.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard14.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard15.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT15.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS15.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM15.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard15.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard16.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT16.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS16.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM16.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard16.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard17.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT17.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS17.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM17.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard17.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard18.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT18.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS18.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM18.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard18.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard19.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT19.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS19.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM19.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard19.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard20.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT20.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS20.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM20.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard20.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard21.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT21.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS21.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM21.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard21.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard22.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT22.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS22.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM22.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard22.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard23.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT23.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS23.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM23.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard23.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                                <li class="swiper-slide gallery-art__item">
+                                    <button class = "gallery-art_btn">
+                                        <picture>
+                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard24.jpg">
+                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT24.jpg">
+                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS24.jpg">
+                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM24.jpg">
+                                            <img class="gallery-img" src="img/gallery/gCard24.jpg" alt="Картина">
+                                        </picture>
+                                    </button>
+                                </li>
+                            </ul>
+                    </div>
                 </div>
             </div>
         </section>

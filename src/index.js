@@ -24,6 +24,28 @@ document.addEventListener('DOMContentLoaded',function(){
     overlay.classList.toggle("overlay");
    });
   // burger
+  //search
+  var fakeSearchBtn = document.getElementById('fakeSearchBtn');
+  var searchBtn = document.getElementById('searchBtn');
+  var inputSearch = document.getElementById('inputSearch');
+  var logo = document.getElementById('logo');
+  var searchOverlay = document.getElementById('searchOverlay');
+  fakeSearchBtn.addEventListener('click', function(){
+    if (window.innerWidth <= 1100) {
+      inputSearch.classList.toggle("visible");
+      searchBtn.classList.toggle("visible");
+      fakeSearchBtn.classList.toggle("hide");
+    }
+     if (window.matchMedia("(min-width: 577px)").matches && window.matchMedia("(max-width: 992px)").matches) {
+      burgerBtn.classList.toggle("hide");
+      logo.classList.toggle("hide");
+    } 
+    if (window.matchMedia("(min-width: 320px)").matches && window.matchMedia("(max-width: 576px)").matches) {
+      searchOverlay.classList.toggle("overlay");
+    }
+    inputSearch.focus();
+  })
+  //search
   // custom scroll
       document.querySelectorAll('.dropdown-item__content').forEach(item => {
         new SimpleBar(item, {
