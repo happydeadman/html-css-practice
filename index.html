@@ -9,13 +9,12 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <link rel="stylesheet" href="styles/choices.min.css">
-    <!-- <link rel="stylesheet" href="styles/swiper-bundle.css">
-    <link rel="stylesheet" href="styles/swiper-bundle.min.css"> -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <script defer src="src/choices.min.js"></script>
-    <!-- <script defer src="src/swiper-bundle.min.js"></script> -->
+    <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script defer src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script defer src="src/index.js"></script>
     <noscript>
@@ -543,68 +542,211 @@
                             </ul>
                     </div>
                 </div>
+                <p class="gallery__note-tablet">
+                    Вам предоставляется 10&nbsp;бесплатных скачиваний. Для увеличения количества скачиваний <a
+                        href="#" class="link gallery__link">авторизуйтесь</a>, либо воспользуйтесь лицензией.
+                </p>
             </div>
         </section>
         <section class="catalog">
             <div class="catalog__container container">
                 <div class="catalog__top flex">
                     <h2 class="catalog__title heading">Каталог</h2>
-                    <!-- <ul class="catalog__countries countries flex">
-                        <li class="countries__item france" data-path="1" aria-label="Франция"></li>
-                        <li class="countries__item ger" data-path="2" aria-label="Германия"></li>
-                        <li class="countries__item italy" data-path="3" aria-label="Италия"></li>
-                        <li class="countries__item rus" data-path="4" aria-label="Россия"></li>
-                        <li class="countries__item belg" data-path="5" aria-label="Бельгия"></li>
-                    </ul> -->
+                    <ul class="catalog__countries countries flex">
+                        <li class="countries__item france" aria-label="Франция">
+                            <button data-path="1"></button>
+                        </li>
+                        <li class="countries__item ger" aria-label="Германия">
+                            <button data-path="2"></button>
+                        </li>
+                        <li class="countries__item italy" aria-label="Италия">
+                            <button data-path="3"></button>
+                        </li>
+                        <li class="countries__item rus" aria-label="Россия">
+                            <button data-path="4"></button>
+                        </li>
+                        <li class="countries__item belg" aria-label="Бельгия">
+                            <button data-path="5"></button>
+                        </li>
+                    </ul>
                 </div>
-                <p class="catalog__descr">
+                <p class="catalog__text">
                     Акционеры крупнейших компаний, которые представляют собой яркий пример континентально-европейского
                     типа политической культуры, будут объявлены нарушающими общечеловеческие нормы этики и&nbsp;морали.
                     Являясь всего лишь частью общей картины, стремящиеся вытеснить традиционное производство,
                     нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально
                     разнесены на&nbsp;независимые элементы.
                 </p>
-                <div class="catalog__artist-block">
-                    <img src="#" alt="Имя художника">
-                    <h4 class="heading catalog__artist-name">Доменико Гирландайо</h4>
+                <div class="catalog__artist-block flex">
                     <div class="catalog__artist-descr">
-                        <span class="lives">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</span>
-                        Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии,
-                        которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный
-                        Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов,
-                        в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских
-                        персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того
-                        времени).
+                        <picture>
+                            <source media="(min-width: 1920px)" srcset="img/catalog/artistDom.jpg">
+                            <source media="(min-width: 1024px)" srcset="img/catalog/artistDomT.jpg">
+                            <source media="(min-width: 768px)" srcset="img/catalog/artistDomS.jpg">
+                            <source media="(min-width: 320px)" srcset="img/catalog/artistDomM.jpg">
+                            <img class="catalog__artist-img" src="img/catalog/artistDom.jpg" alt="Художник">
+                        </picture>
+                        <h4 class="heading catalog__artist-name">Доменико Гирландайо</h4>
+                        <div class="catalog__artist-descr-text">
+                            <div class="catalog__lives">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</div>
+                            Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии,
+                            которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный
+                            Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов,
+                            в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских
+                            персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того
+                            времени).
+                        </div>
+                    </div>
+                    <div class="catalog__artist-years artist-years" id="accordion">
+                            <h3 class="catalog__years">
+                                C 1400 по 1499 гг.
+                            </h3>
+                            <ul class="artist-years__list">
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Бенедетто ди Биндо
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Бергоньоне, Амброджо
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Биссоло, Франческо
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Больтраффио, Джованни
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Бонсиньори, Франческо
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Боттичини, Рафаэлло
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Брамантино
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Бреа, Людовико
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Бьяджо д’Антонио Туччи
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Веккьетта
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Андреа Верроккьо
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Доменико Гирландайо
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Беноццо Гоццоли
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Граначчи, Франческо
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Грегорио ди Чекко
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Джованни да Удине
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Джованни ди Паоло
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Джорджоне
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Парентино, Бернардо
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Пезеллино
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Пьетро Перуджино
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Перуцци, Бальдассаре
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Пизанелло
+                                    </button>
+                                </li>
+                                <li class="artist-years__item">
+                                    <button class="artist-years__link">
+                                        Пинтуриккьо
+                                    </button>
+                                </li>
+                            </ul>
+                            <h3 class="catalog__years">
+                                C 1500 по 1599 гг.
+                            </h3>
+                            <h3 class="catalog__years">
+                                C 1600 по 1699 гг.
+                            </h3>
+                            <h3 class="catalog__years">
+                                C 1700 по 1799 гг.
+                            </h3>
+                            <h3 class="catalog__years">
+                                C 1800 по 1899 гг.
+                            </h3>
+                            <h3 class="catalog__years">
+                                C 1900 по 1999 гг.
+                            </h3>
+                            <h3 class="catalog__years">
+                                C 2000 г.
+                            </h3>
                     </div>
                 </div>
-                <div class="catalog__artist-years">
-                    <ul class="catalog__artists-list artists-list">
-                        <li class="artists-list__item">
-                            C 1400 по 1499 гг.
-                        </li>
-                        <li class="artists-list__item">
-                            C 1500 по 1599 гг.
-                        </li>
-                        <li class="artists-list__item">
-                            C 1600 по 1699 гг.
-                        </li>
-                        <li class="artists-list__item">
-                            C 1700 по 1799 гг.
-                        </li>
-                        <li class="artists-list__item">
-                            C 1800 по 1899 гг.
-                        </li>
-                        <li class="artists-list__item">
-                            C 1900 по 1999 гг.
-                        </li>
-                        <li class="artists-list__item">
-                            C 2000 г.
-                        </li>
-                    </ul>
-                </div>
+
             </div>
         </section>
-        <section class="events">
+        <!-- <section class="events">
             <div class="container events__container">
                 <h2 class="heading events__title">События</h2>
                 <ul class="events__list">
@@ -645,8 +787,8 @@
                 </ul>
                 <button class="btn events__btn">Все события</button>
             </div>
-        </section>
-        <section class="publisers">
+        </section> -->
+        <!-- <section class="publisers">
             <div class="container publisers__container">
                 <h2 class="publisers__title heading">Издания</h2>
                 <div class="publisers__categories categories">
@@ -721,11 +863,10 @@
                     </div>
                 </div>
                 <div class="publisers__slider">
-                    <!-- here's slider soon -->
                 </div>
             </div>
-        </section>
-        <section class="projects">
+        </section> -->
+        <!-- <section class="projects">
             <h2 class="projects__title heading">Проекты</h2>
             <p class="projects__text">
                 Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности
@@ -742,9 +883,8 @@
             </p>
             <h3 class="projects__partners">Партнёры проектов</h3>
             <div class="projects__slider">
-                <!-- slider will be soon -->
             </div>
-        </section>
+        </section> -->
         <!-- <section class="contacts">
             <div class="contacts__container container">
                 <h2 class="contacts__title heading">Контакты</h2>
@@ -778,7 +918,7 @@
             </div>
         </section> -->
     </main>
-    <footer class="footer">
+    <!-- <footer class="footer">
         <div class="container footer__container">
             <img src="img/logo.svg" alt="Blanchard - художественная галерея">
         </div>
@@ -795,7 +935,7 @@
                 </li>
             </ul>
         </div>
-    </footer>
+    </footer> -->
 </body>
 
 </html>

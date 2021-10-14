@@ -129,4 +129,9 @@ document.addEventListener('DOMContentLoaded',function(){
 
       });
   // swiper hero
+  // accordion
+  $( function() {
+    $( "#accordion" ).accordion();
+  } );
+  // accordion
 });

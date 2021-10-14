@@ -635,6 +635,7 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
 }
 .choices__item--choice {
   transition: background-color .3s ease;
+
 }
 .select__item:hover {
   color: red;
@@ -655,6 +656,7 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
 }
 .choices__list--dropdown {
   color: var(--select-list);
+  background-color: rgba(0,0,0,0.9);
 }
 .is-focused .choices__inner, .is-open .choices__inner {
   border-color: currentColor;
@@ -680,6 +682,13 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   margin-bottom: 60px;
   letter-spacing: .063em;
   width: 85%;
+  font-style: normal;
+  font-size: 15px;
+  line-height: 32px; 
+}
+.gallery__note-tablet {
+  display: none;
+  letter-spacing: .063em;
   font-style: normal;
   font-size: 15px;
   line-height: 32px; 
@@ -717,7 +726,9 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
 }
 .gallery__swiper-section {
   flex-direction: column;
-  width: 1150px;
+  max-width: 1150px;
+  width: 100%;
+  overflow: hidden
 }
 .swiper-container {
   width: 100%;
@@ -749,11 +760,6 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   width: 100%;
   height: 100%;
 }
-/* .swiper-slide {
-  position: relative;
-  height: calc((100% - 50px) / 2);
-  cursor: pointer;
-} */
 .gallery-art_btn::before {
   content: "";
   position: absolute;
@@ -857,17 +863,14 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
 /* catalog */
 .catalog__container {
   color: var(--main-text);
-  padding: 10px 50px 10px 50px;
-}
-.catalog__top {
-  margin-top: 80px;
-  margin-bottom: 30px;
-}
-.catalog__title {
-  margin-right: 40px;
+  padding: 79px 50px 10px 50px;
 }
 .catalog__top {
   align-items: center;
+  margin-bottom: 15px;
+}
+.catalog__title {
+  margin-right: 40px;
 }
 .countries__item {
   height: 46px;
@@ -875,6 +878,7 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  cursor: pointer;
 }
 .countries__item:not(:last-child) {
   margin-right: 50px;
@@ -894,11 +898,40 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
 .belg {
   background-image: url(../img/catalog/belg.png);
 }
-.catalog__descr {
-  margin-bottom: 50px;
-  max-width: 80%;
+.catalog__artist-name {
+  margin-bottom: 7px;
+  font-size: 24px;
+  line-height: 33px;
+  letter-spacing: .03em;
+}
+.catalog__artist-descr {
+  max-width: 750px;
+  height: 100%;
+  margin-right: 50px;
   font-size: 16px;
   line-height: 32px;
+}
+.catalog__lives {
+  margin-bottom: 7px;
+  font-size: 12px;
+  color: var(--select-list);
+  line-height: 16px;
+}
+.artist-years__list {
+  columns: 3;
+}
+.catalog__text {
+  margin-bottom: 40px;
+  max-width: 69%;
+  font-size: 16px;
+  line-height: 32px;
+}
+.catalog__artist-img {
+  object-fit: cover;
+  margin-bottom: 20px;
+  width: 100%;
+  height: 100%;
+  object-position: center;
 }
 @media screen and (max-width: 1100px) {
   .header__container {
@@ -1128,7 +1161,7 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   }
   .gallery__container {
     position: relative;
-    padding: 81px 50px 145px 50px;
+    padding: 81px 50px 71px 50px;
     flex-direction: column;
   }
   .gallery__left {
@@ -1138,9 +1171,14 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
     max-width: 280px;
     margin-bottom: 24px;
   }
+  .gallery__swiper {
+    margin-bottom: 12px;
+  }
   .gallery__note {
-    position: absolute;
-    bottom: 9px;
+    display: none;
+  }
+  .gallery__note-tablet {
+    display: block;
   }
   .gallery__swiper-section {
     width: 100%;
@@ -1220,6 +1258,9 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   }
   .search-top__search-text.visible {
     transform: translateY(-8px);
+  }
+  .header__logo {
+    margin-right: 0;
   }
   .header__link {
     white-space: nowrap;
@@ -1311,8 +1352,10 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   .gallery__swiper-section {
     flex-direction: column-reverse;
     align-items: center;
+    margin-bottom: 20px;
   }
   .gallery__swiper {
+    margin-bottom: 0;
     padding-top: 0;
     height: auto;
     display: flex;
@@ -1335,10 +1378,9 @@ input:active:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ea
   .gallery-swiper__pagination {
     transform: translateY(2px);
   }
-  .gallery__note {
+  .gallery__note-tablet {
     margin-bottom: 0;
     bottom: 42px;
-    max-width: 90%;
   }
   .gallery__left {
     margin-bottom: 16px;
