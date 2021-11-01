@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="styles/normalize.css">
     <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
     <link rel="stylesheet" href="styles/choices.min.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <link rel="stylesheet" href="styles/style.css">
     <script defer src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
     <script defer src="src/choices.min.js"></script>
@@ -27,18 +27,37 @@
 </head>
 
 <body>
-    <header class="header">
+    <header class="header" id="header">
         <div class="header__top-menu">
-        <div class="header__container container flex" id="searchOverlay">
+            <div class="header__container container flex" id="searchOverlay">
                 <div class="header__burger" id="burger-btn">
                     <span></span>
                 </div>
-                <a class="header__logo" id="logo" href="#"><img class="header__logo-img" src="img/logo.svg" alt="Логотип Blanchard"></a>
-                <nav class="header__nav nav" id="burger-menu">
+                <a class="header__logo" id="logo" href="#"><img class="header__logo-img" src="img/logo.svg"
+                        alt="Логотип Blanchard"></a>
+                <nav class="header__nav nav">
                     <ul class="header__nav-list flex">
-                        <li class="header__nav-item"><a href="#" class="header__link link">О нас</a></li>
-                        <li class="header__nav-item"><a href="#" class="header__link link">Галерея</a></li>
-                        <li class="header__nav-item"><a href="#" class="header__link link">Каталог</a></li>
+                        <li class="header__nav-item"><a href="#about-us" class="header__link link">О нас</a></li>
+                        <li class="header__nav-item"><a href="#gallery" class="header__link link">Галерея</a></li>
+                        <li class="header__nav-item"><a href="#catalog" class="header__link link">Каталог</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">События</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">Издания</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">Проекты</a></li>
+                        <li class="header__nav-item"><a href="#" class="header__link link">Контакты</a></li>
+                    </ul>
+                    <a href="#" class="header__enter outline-focus header__enter--burger">
+                        <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M5.12056 9.09278L6.13889 10.1111L9.75 6.5L6.13889 2.88889L5.12056 3.90722L6.98389 5.77778H0V7.22222H6.98389L5.12056 9.09278ZM11.5556 0H1.44444C0.642778 0 0 0.65 0 1.44444V4.33333H1.44444V1.44444H11.5556V11.5556H1.44444V8.66667H0V11.5556C0 12.35 0.642778 13 1.44444 13H11.5556C12.35 13 13 12.35 13 11.5556V1.44444C13 0.65 12.35 0 11.5556 0Z" />
+                        </svg>
+                        Войти
+                    </a>
+                </nav>
+                <nav class="header__burger-menu nav" id="burger-menu">
+                    <ul class="header__nav-list flex">
+                        <li class="header__nav-item"><a href="#about-us" class="header__link link">О нас</a></li>
+                        <li class="header__nav-item"><a href="#gallery" class="header__link link">Галерея</a></li>
+                        <li class="header__nav-item"><a href="#catalog" class="header__link link">Каталог</a></li>
                         <li class="header__nav-item"><a href="#" class="header__link link">События</a></li>
                         <li class="header__nav-item"><a href="#" class="header__link link">Издания</a></li>
                         <li class="header__nav-item"><a href="#" class="header__link link">Проекты</a></li>
@@ -61,35 +80,43 @@
                 </a>
                 <div class="header__fake-search" id="fakeSearchBtn">
                     <svg width="30" height="29" viewBox="0 0 30 29" xmlns="http://www.w3.org/2000/svg">
-                        <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)"/>
-                        <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z"/>
-                        </svg>
+                        <rect width="9.15446" height="2.28862"
+                            transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z" />
+                    </svg>
                 </div>
                 <div class="header__search-top search-top">
                     <form class="search-top__form form flex">
                         <button type="submit" class="search-top__btn" id="searchBtn">
-                            <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <rect width="9.15446" height="2.28862" transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)" fill="white"/>
-                                <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z" fill="white"/>
-                                </svg>
+                            <svg width="30" height="29" viewBox="0 0 30 29" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="9.15446" height="2.28862"
+                                    transform="matrix(-0.718931 0.695081 0.718931 0.695081 6.58154 21.0461)"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M16.1246 24.174C10.0376 24.174 5.32763 19.2726 5.32763 13.5104C5.32763 7.74823 10.0376 2.84676 16.1246 2.84676C22.2115 2.84676 26.9215 7.74823 26.9215 13.5104C26.9215 19.2726 22.2115 24.174 16.1246 24.174ZM16.1246 26.8399C8.76285 26.8399 2.79502 20.8721 2.79502 13.5104C2.79502 6.14869 8.76285 0.180847 16.1246 0.180847C23.4863 0.180847 29.4541 6.14869 29.4541 13.5104C29.4541 20.8721 23.4863 26.8399 16.1246 26.8399Z"
+                                    fill="white" />
+                            </svg>
                         </button>
-                        <input aria-label="Поиск по сайту" type="search" id="inputSearch" class="search-top__search-text search-text">
+                        <input aria-label="Поиск по сайту" type="search" id="inputSearch"
+                            class="search-top__search-text search-text">
                     </form>
                 </div>
-                        </div>
             </div>
+        </div>
         <div class="header__btm-menu">
             <div class="header__btm-menu-container container flex">
                 <nav class="header__bottom-nav nav">
-                    <ul class="header__dropdown-list flex" >
+                    <ul class="header__dropdown-list flex">
                         <li class="header__dropdown-item dropdown-item" data-dropdown>
-                                <button class="dropdown-item__btn link" data-dropdown-button>
-                                    Реализм
-                                    <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M11 1L6 6L1 1" />
-                                    </svg>
-                                </button>
+                            <button class="dropdown-item__btn link" data-dropdown-button>
+                                Реализм
+                                <svg width="12" height="7" viewBox="0 0 12 7" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11 1L6 6L1 1" />
+                                </svg>
+                            </button>
                             <ul class="dropdown-item__content" data-simplebar>
                                 <li class="dropdown-item__subitem real1">Тинторетто</li>
                                 <li class="dropdown-item__subitem real2">Фридрих</li>
@@ -193,14 +220,15 @@
                                     fill="white" />
                             </svg>
                         </button>
-                        <input aria-label="Поиск по сайту" type="search" class="search-menu__text search-text" placeholder="Поиск по сайту">
+                        <input aria-label="Поиск по сайту" type="search" class="search-menu__text search-text"
+                            placeholder="Поиск по сайту">
                     </form>
                 </div>
             </div>
         </div>
     </header>
     <main>
-        <section class="hero">
+        <section class="hero" id="hero">
             <h1 class="main-header">Blanchard художественная галерея</h1>
             <div class="hero__container container">
                 <div class="hero__swiper">
@@ -215,10 +243,11 @@
                     Мы&nbsp;вынуждены отталкиваться от&nbsp;того, что реализация намеченных плановых заданий создаёт
                     предпосылки для новых предложений.
                 </p>
-                <div class="hero__btn"><button class="btn btn--small outline-focus">Подписаться на&nbsp;рассылку</button></div>
+                <div class="hero__btn"><button class="btn btn--small outline-focus">Подписаться
+                        на&nbsp;рассылку</button></div>
             </div>
         </section>
-        <section class="about-us">
+        <section class="about-us" id="about-us">
             <div class="about-us__container container">
                 <h2 class="about-us__title heading">О нас</h2>
                 <p class="about-us__text">
@@ -234,7 +263,7 @@
                 </p>
             </div>
         </section>
-        <section class="gallery">
+        <section class="gallery" id="gallery">
             <div class="gallery__container container flex">
                 <div class="gallery__left">
                     <h2 class="gallery__title heading">Галерея</h2>
@@ -272,301 +301,301 @@
                         </button>
                     </div>
                     <div class="gallery__swiper gallery-swiper">
-                    
-                    
-                            <ul class="swiper-wrapper gallery-art">
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard1.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT1.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS1.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM1.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard2.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT2.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS2.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM2.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard2.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard3.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT3.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS3.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM3.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard3.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard4.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT4.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS4.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM4.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard4.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard5.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT5.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS5.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM5.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard5.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard6.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT6.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS6.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM6.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard6.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard7.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT7.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS7.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM7.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard7.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard8.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT8.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS8.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM8.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard8.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard9.jpg">
-                                            <source media="(min-width: 924px)" srcset="img/gallery/gCadrT9.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS9.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM9.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard9.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard10.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT10.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS10.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM10.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard10.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard11.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT11.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS11.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM11.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard11.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard12.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT12.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS12.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM12.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard12.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard13.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT13.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS13.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM13.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard13.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard14.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT14.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS14.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM14.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard14.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard15.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT15.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS15.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM15.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard15.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard16.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT16.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS16.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM16.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard16.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard17.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT17.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS17.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM17.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard17.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard18.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT18.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS18.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM18.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard18.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard19.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT19.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS19.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM19.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard19.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard20.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT20.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS20.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM20.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard20.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard21.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT21.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS21.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM21.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard21.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard22.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT22.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS22.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM22.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard22.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard23.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT23.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS23.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM23.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard23.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                                <li class="swiper-slide gallery-art__item">
-                                    <button class = "gallery-art_btn">
-                                        <picture>
-                                            <source media="(min-width: 1920px)" srcset="img/gallery/gCard24.jpg">
-                                            <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT24.jpg">
-                                            <source media="(min-width: 768px)" srcset="img/gallery/gCadrS24.jpg">
-                                            <source media="(min-width: 320px)" srcset="img/gallery/gCadrM24.jpg">
-                                            <img class="gallery-img" src="img/gallery/gCard24.jpg" alt="Картина">
-                                        </picture>
-                                    </button>
-                                </li>
-                            </ul>
+
+
+                        <ul class="swiper-wrapper gallery-art">
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard1.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT1.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS1.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM1.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard1.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard2.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT2.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS2.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM2.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard2.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard3.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT3.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS3.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM3.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard3.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard4.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT4.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS4.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM4.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard4.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard5.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT5.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS5.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM5.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard5.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard6.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT6.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS6.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM6.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard6.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard7.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT7.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS7.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM7.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard7.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard8.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT8.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS8.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM8.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard8.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard9.jpg">
+                                        <source media="(min-width: 924px)" srcset="img/gallery/gCadrT9.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS9.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM9.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard9.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard10.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT10.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS10.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM10.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard10.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard11.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT11.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS11.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM11.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard11.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard12.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT12.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS12.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM12.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard12.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard13.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT13.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS13.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM13.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard13.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard14.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT14.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS14.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM14.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard14.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard15.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT15.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS15.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM15.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard15.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard16.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT16.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS16.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM16.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard16.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard17.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT17.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS17.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM17.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard17.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard18.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT18.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS18.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM18.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard18.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard19.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT19.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS19.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM19.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard19.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard20.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT20.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS20.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM20.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard20.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard21.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT21.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS21.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM21.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard21.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard22.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT22.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS22.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM22.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard22.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard23.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT23.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS23.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM23.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard23.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                            <li class="swiper-slide gallery-art__item">
+                                <button class="gallery-art__btn">
+                                    <picture>
+                                        <source media="(min-width: 1920px)" srcset="img/gallery/gCard24.jpg">
+                                        <source media="(min-width: 1024px)" srcset="img/gallery/gCadrT24.jpg">
+                                        <source media="(min-width: 768px)" srcset="img/gallery/gCadrS24.jpg">
+                                        <source media="(min-width: 320px)" srcset="img/gallery/gCadrM24.jpg">
+                                        <img class="gallery-img" src="img/gallery/gCard24.jpg" alt="Картина">
+                                    </picture>
+                                </button>
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <p class="gallery__note-tablet">
-                    Вам предоставляется 10&nbsp;бесплатных скачиваний. Для увеличения количества скачиваний <a
-                        href="#" class="link gallery__link">авторизуйтесь</a>, либо воспользуйтесь лицензией.
+                    Вам предоставляется 10&nbsp;бесплатных скачиваний. Для увеличения количества скачиваний <a href="#"
+                        class="link gallery__link">авторизуйтесь</a>, либо воспользуйтесь лицензией.
                 </p>
             </div>
         </section>
-        <section class="catalog">
+        <section class="catalog" id="catalog">
             <div class="catalog__container container">
                 <div class="catalog__top flex">
                     <h2 class="catalog__title heading">Каталог</h2>
                     <ul class="catalog__countries countries flex">
                         <li class="countries__item france" aria-label="Франция">
-                            <button data-path="1"></button>
+                            <button class="countries__btn" data-path="france"></button>
                         </li>
                         <li class="countries__item ger" aria-label="Германия">
-                            <button data-path="2"></button>
+                            <button class="countries__btn" data-path="ger"></button>
                         </li>
                         <li class="countries__item italy" aria-label="Италия">
-                            <button data-path="3"></button>
+                            <button class="countries__btn active-country" data-path="italy"></button>
                         </li>
                         <li class="countries__item rus" aria-label="Россия">
-                            <button data-path="4"></button>
+                            <button class="countries__btn" data-path="rus"></button>
                         </li>
                         <li class="countries__item belg" aria-label="Бельгия">
-                            <button data-path="5"></button>
+                            <button class="countries__btn" data-path="belg"></button>
                         </li>
                     </ul>
                 </div>
@@ -577,8 +606,8 @@
                     нанотехнологии и&nbsp;по&nbsp;сей день остаются уделом либералов, которые жаждут быть функционально
                     разнесены на&nbsp;независимые элементы.
                 </p>
-                <div class="catalog__artist-block flex">
-                    <div class="catalog__artist-descr">
+                <div data-target="italy" class="catalog__artist-block catalog__artist-block--active flex">
+                    <div class="catalog__artist-descr catalog__artist-descr--active" data-target="dom">
                         <picture>
                             <source media="(min-width: 1920px)" srcset="img/catalog/artistDom.jpg">
                             <source media="(min-width: 1024px)" srcset="img/catalog/artistDomT.jpg">
@@ -589,158 +618,1042 @@
                         <h4 class="heading catalog__artist-name">Доменико Гирландайо</h4>
                         <div class="catalog__artist-descr-text">
                             <div class="catalog__lives">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</div>
-                            Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной династии,
-                            которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где юный
-                            Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых циклов,
-                            в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь библейских
+                            Один из&nbsp;ведущих флорентийских художников Кватроченто, основатель художественной
+                            династии,
+                            которую продолжили его брат Давид и&nbsp;сын Ридольфо. Глава художественной мастерской, где
+                            юный
+                            Микеланджело в&nbsp;течение года овладевал профессиональными навыками. Автор фресковых
+                            циклов,
+                            в&nbsp;которых выпукло, со&nbsp;всевозможными подробностями показана домашняя жизнь
+                            библейских
                             персонажей (в&nbsp;их&nbsp;роли выступают знатные граждане Флоренции в&nbsp;костюмах того
                             времени).
                         </div>
                     </div>
-                    <div class="catalog__artist-years artist-years" id="accordion">
-                            <h3 class="catalog__years">
-                                C 1400 по 1499 гг.
-                            </h3>
-                            <ul class="artist-years__list">
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Бенедетто ди Биндо
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Бергоньоне, Амброджо
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Биссоло, Франческо
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Больтраффио, Джованни
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Бонсиньори, Франческо
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Боттичини, Рафаэлло
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Брамантино
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Бреа, Людовико
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Бьяджо д’Антонио Туччи
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Веккьетта
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Андреа Верроккьо
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Доменико Гирландайо
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Беноццо Гоццоли
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Граначчи, Франческо
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Грегорио ди Чекко
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Джованни да Удине
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Джованни ди Паоло
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Джорджоне
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Парентино, Бернардо
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Пезеллино
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Пьетро Перуджино
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Перуцци, Бальдассаре
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Пизанелло
-                                    </button>
-                                </li>
-                                <li class="artist-years__item">
-                                    <button class="artist-years__link">
-                                        Пинтуриккьо
-                                    </button>
-                                </li>
-                            </ul>
-                            <h3 class="catalog__years">
-                                C 1500 по 1599 гг.
-                            </h3>
-                            <h3 class="catalog__years">
-                                C 1600 по 1699 гг.
-                            </h3>
-                            <h3 class="catalog__years">
-                                C 1700 по 1799 гг.
-                            </h3>
-                            <h3 class="catalog__years">
-                                C 1800 по 1899 гг.
-                            </h3>
-                            <h3 class="catalog__years">
-                                C 1900 по 1999 гг.
-                            </h3>
-                            <h3 class="catalog__years">
-                                C 2000 г.
-                            </h3>
+                    <div class="catalog__artist-descr" data-target="filler">
+                        <picture>
+                            <source media="(min-width: 1920px)" srcset="img/catalog/artistFill.jpg">
+                            <source media="(min-width: 1024px)" srcset="img/catalog/artistFillT.jpg">
+                            <source media="(min-width: 768px)" srcset="img/catalog/artistFillS.jpg">
+                            <source media="(min-width: 320px)" srcset="img/catalog/artistFillM.jpg">
+                            <img class="catalog__artist-img" src="img/catalog/artistFill.jpg" alt="Художник">
+                        </picture>
+                        <h4 class="heading catalog__artist-name">Что мы о нём знаем?</h4>
+                        <div class="catalog__artist-descr-text">
+                            <div class="catalog__lives lives-filler">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</div>
+                            Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                        </div>
+                        <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                    </div>
+                    <div class="catalog__artist-years artist-years accordion">
+                        <h3 class="catalog__years flex">
+                            C 1400 по 1499 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"/>
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <ul class="artist-years__list">
+                            <li class="artist-years__item">
+                                <button data-path="filler" class ="artist-years__btn link">
+                                    Бенедетто ди Биндо
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Бергоньоне, Амброджо
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Биссоло, Франческо
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Больтраффио, Джованни
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Бонсиньори, Франческо
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Боттичини, Рафаэлло
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Брамантино
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Бреа, Людовико
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Бьяджо д’Антонио Туччи
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Веккьетта
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Андреа Верроккьо
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="dom" class="artist-years__btn  link   ">
+                                 Доменико Гирландайо
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Беноццо Гоццоли
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Граначчи, Франческо
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Грегорио ди Чекко
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Джованни да Удине
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Джованни ди Паоло
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Джорджоне
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Парентино, Бернардо
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Пезеллино
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Пьетро Перуджино
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Перуцци, Бальдассаре
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Пизанелло
+                                </button>
+                            </li>
+                            <li class="artist-years__item">
+                                <button data-path="filler" class="artist-years__btn link">
+                                    Пинтуриккьо
+                                </button>
+                            </li>
+                        </ul>
+                        <h3 class="catalog__years flex">
+                            C 1500 по 1599 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1600 по 1699 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1700 по 1799 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1800 по 1899 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1900 по 1999 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 2000 г.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-target="france" class="catalog__artist-block flex">
+                    <div class="catalog__artist-descr  catalog__artist-descr--active" data-target="filler">
+                        <picture>
+                            <source media="(min-width: 1920px)" srcset="img/catalog/artistFill.jpg">
+                            <source media="(min-width: 1024px)" srcset="img/catalog/artistFillT.jpg">
+                            <source media="(min-width: 768px)" srcset="img/catalog/artistFillS.jpg">
+                            <source media="(min-width: 320px)" srcset="img/catalog/artistFillM.jpg">
+                            <img class="catalog__artist-img" src="img/catalog/artistFill.jpg" alt="Художник">
+                        </picture>
+                        <h4 class="heading catalog__artist-name">Что мы о нём знаем?</h4>
+                        <div class="catalog__artist-descr-text">
+                            <div class="catalog__lives lives-filler">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</div>
+                            Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                        </div>
+                        <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                    </div>
+                    <div class="catalog__artist-descr" data-target="filler">
+                        <picture>
+                            <source media="(min-width: 1920px)" srcset="img/catalog/artistFill.jpg">
+                            <source media="(min-width: 1024px)" srcset="img/catalog/artistFillT.jpg">
+                            <source media="(min-width: 768px)" srcset="img/catalog/artistFillS.jpg">
+                            <source media="(min-width: 320px)" srcset="img/catalog/artistFillM.jpg">
+                            <img class="catalog__artist-img" src="img/catalog/artistFill.jpg" alt="Художник">
+                        </picture>
+                        <h4 class="heading catalog__artist-name">Что мы о нём знаем?</h4>
+                        <div class="catalog__artist-descr-text">
+                            <div class="catalog__lives lives-filler">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</div>
+                            Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                        </div>
+                        <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                    </div>
+                    <div class="catalog__artist-years artist-years accordion">
+                        <h3 class="catalog__years flex">
+                            C 1400 по 1499 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1500 по 1599 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1600 по 1699 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1700 по 1799 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1800 по 1899 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1900 по 1999 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 2000 г.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-target="ger" class="catalog__artist-block flex">
+                    <div class="catalog__artist-descr catalog__artist-descr--active" data-target="filler">
+                        <picture>
+                            <source media="(min-width: 1920px)" srcset="img/catalog/artistFill.jpg">
+                            <source media="(min-width: 1024px)" srcset="img/catalog/artistFillT.jpg">
+                            <source media="(min-width: 768px)" srcset="img/catalog/artistFillS.jpg">
+                            <source media="(min-width: 320px)" srcset="img/catalog/artistFillM.jpg">
+                            <img class="catalog__artist-img" src="img/catalog/artistFill.jpg" alt="Художник">
+                        </picture>
+                        <h4 class="heading catalog__artist-name">Что мы о нём знаем?</h4>
+                        <div class="catalog__artist-descr-text">
+                            <div class="catalog__lives lives-filler">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</div>
+                            Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                        </div>
+                        <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                    </div>
+                    <div class="catalog__artist-years artist-years accordion">
+                        <h3 class="catalog__years flex">
+                            C 1400 по 1499 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1500 по 1599 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1600 по 1699 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1700 по 1799 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1800 по 1899 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1900 по 1999 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 2000 г.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-target="rus" class="catalog__artist-block flex">
+                    <div class="catalog__artist-descr catalog__artist-descr--active" data-target="filler">
+                        <picture>
+                            <source media="(min-width: 1920px)" srcset="img/catalog/artistFill.jpg">
+                            <source media="(min-width: 1024px)" srcset="img/catalog/artistFillT.jpg">
+                            <source media="(min-width: 768px)" srcset="img/catalog/artistFillS.jpg">
+                            <source media="(min-width: 320px)" srcset="img/catalog/artistFillM.jpg">
+                            <img class="catalog__artist-img" src="img/catalog/artistFill.jpg" alt="Художник">
+                        </picture>
+                        <h4 class="heading catalog__artist-name">Что мы о нём знаем?</h4>
+                        <div class="catalog__artist-descr-text">
+                            <div class="catalog__lives lives-filler">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</div>
+                            Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                        </div>
+                        <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                    </div>
+                    <div class="catalog__artist-years artist-years accordion">
+                        <h3 class="catalog__years flex">
+                            C 1400 по 1499 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1500 по 1599 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1600 по 1699 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1700 по 1799 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1800 по 1899 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1900 по 1999 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 2000 г.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-target="belg" class="catalog__artist-block flex">
+                    <div class="catalog__artist-descr catalog__artist-descr--active" data-target="filler">
+                        <picture>
+                            <source media="(min-width: 1920px)" srcset="img/catalog/artistFill.jpg">
+                            <source media="(min-width: 1024px)" srcset="img/catalog/artistFillT.jpg">
+                            <source media="(min-width: 768px)" srcset="img/catalog/artistFillS.jpg">
+                            <source media="(min-width: 320px)" srcset="img/catalog/artistFillM.jpg">
+                            <img class="catalog__artist-img" src="img/catalog/artistFill.jpg" alt="Художник">
+                        </picture>
+                        <h4 class="heading catalog__artist-name">Что мы о нём знаем?</h4>
+                        <div class="catalog__artist-descr-text">
+                            <div class="catalog__lives lives-filler">2&nbsp;июня 1448&nbsp;&mdash; 11&nbsp;января 1494.</div>
+                            Пока ничего... Зато мы&nbsp;точно знаем, что в&nbsp;галерее есть на&nbsp;что посмотреть!
+                        </div>
+                        <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                    </div>
+                    <div class="catalog__artist-years artist-years accordion">
+                        <h3 class="catalog__years flex">
+                            C 1400 по 1499 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1500 по 1599 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1600 по 1699 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1700 по 1799 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1800 по 1899 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 1900 по 1999 гг.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
+                        <h3 class="catalog__years flex">
+                            C 2000 г.
+                            <span class="catalog__arrow">
+                                <svg width="50" height="50" viewBox="0 0 50 50" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z"
+                                        fill="#ECECEC" />
+                                    <path
+                                        d="M50 25C50 38.8071 38.8071 50 25 50C11.1929 50 0 38.8071 0 25C0 11.1929 11.1929 0 25 0C38.8071 0 50 11.1929 50 25Z" />
+                                    <path d="M33.3333 23.3333L25 31.6667L16.6667 23.3333" stroke="black" />
+                                </svg>
+                            </span>
+                        </h3>
+                        <div class="catalog__placeholder-years placeholder-years flex">
+                            <div class="placeholder-years__img"></div>
+                            <div class="placeholder-years__text">
+                                <h4 class="placeholder-years__title">Здесь пока пусто</h4>
+                                <div class="placeholder-years__descr">А&nbsp;в&nbsp;галерее вы&nbsp;всегда можете найти
+                                    что-то интересное для себя</div>
+                                <a href="#gallery" class="placeholder-years__link link">В галерею</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
 

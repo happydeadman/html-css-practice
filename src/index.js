@@ -36,16 +36,24 @@ document.addEventListener('DOMContentLoaded',function(){
       searchBtn.classList.toggle("visible");
       fakeSearchBtn.classList.toggle("hide");
     }
-     if (window.matchMedia("(min-width: 577px)").matches && window.matchMedia("(max-width: 992px)").matches) {
+     if (window.matchMedia("(min-width: 768px)").matches && window.matchMedia("(max-width: 992px)").matches) {
       burgerBtn.classList.toggle("hide");
       logo.classList.toggle("hide");
     } 
-    if (window.matchMedia("(min-width: 320px)").matches && window.matchMedia("(max-width: 576px)").matches) {
+    if (window.matchMedia("(min-width: 320px)").matches && window.matchMedia("(max-width: 767px)").matches) {
       searchOverlay.classList.toggle("overlay");
     }
     inputSearch.focus();
-  })
+  });
   //search
+  //resizeHeight
+  function resizeBlock () {
+    var newHeigth = document.getElementById("header").offsetHeight + document.getElementById("hero").offsetHeight;
+    document.getElementById("burger-menu").style.height = newHeigth + "px";
+  };
+  resizeBlock();
+  window.onresize = resizeBlock;
+  //resizeHeight
   // custom scroll
       document.querySelectorAll('.dropdown-item__content').forEach(item => {
         new SimpleBar(item, {
@@ -87,7 +95,7 @@ document.addEventListener('DOMContentLoaded',function(){
             },
             spaceBetween: 0
           },
-          576: {
+          767: {
             slidesPerView: 2,
             grid: {
               rows: 2
@@ -131,7 +139,60 @@ document.addEventListener('DOMContentLoaded',function(){
   // swiper hero
   // accordion
   $( function() {
-    $( "#accordion" ).accordion();
+    $( ".accordion" ).accordion({
+      icons: false,
+      collapsible: true,
+      heightStyle: "content",
+    });
   } );
   // accordion
+
+  //catalog tabs
+
+  document.querySelectorAll('.countries__btn').forEach(function(tabBtn) {
+    tabBtn.addEventListener('click', function(event) {
+      const path = event.currentTarget.dataset.path;
+      document.querySelectorAll("[data-path].active-country").forEach(cBtn => {
+        cBtn.classList.remove("active-country")
+      })
+      this.classList.toggle('active-country')
+      document.querySelectorAll('.catalog__artist-block').forEach(function(tabCountry) {
+        tabCountry.classList.remove('catalog__artist-block--active');
+      });
+      document.querySelector(`[data-target="${path}"]`).classList.add('catalog__artist-block--active');
+      $('.accordion').accordion("refresh");
+    });
+  });
+  //catalog tabs
+  //artist tabs
+  document.querySelectorAll('.catalog__artist-block').forEach(item => {
+    let btns = item.querySelectorAll('.artist-years__btn');
+    let articles = item.querySelectorAll('.catalog__artist-descr');
+    btns.forEach (el => {
+      el.addEventListener ("click", function(e) {
+        const path = e.currentTarget.dataset.path;
+        let tabCont = item.querySelector(`[data-target='${path}']`);
+        articles.forEach (el => {
+          el.classList.remove("catalog__artist-descr--active");
+        });
+        btns.forEach (el => {
+          el.classList.remove('artist-years__btn--active')
+        });
+        tabCont.classList.add('catalog__artist-descr--active');
+        this.classList.add('artist-years__btn--active');
+      });
+    });
+  });
+
+  // document.querySelectorAll('.artist-years__btn').forEach(function(tabBtn) {
+  //   tabBtn.addEventListener('click', function(event) {
+  //     const path = event.currentTarget.dataset.path;
+  //     document.querySelectorAll('.catalog__artist-descr').forEach(function(tabArtist) {
+  //         tabArtist.classList.remove('catalog__artist-descr--active');
+  //     });
+  //     document.querySelector(`[data-target="${path}"]`).classList.add('catalog__artist-descr--active');
+  //     $('.accordion').accordion("refresh");
+  //   });
+  // });
+  //artist tabs
 });
