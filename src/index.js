@@ -49,7 +49,14 @@ document.addEventListener('DOMContentLoaded',function(){
   //resizeHeight
   function resizeBlock () {
     var newHeigth = document.getElementById("header").offsetHeight + document.getElementById("hero").offsetHeight;
+    var eventArticle = document.getElementById('event-article');
     document.getElementById("burger-menu").style.height = newHeigth + "px";
+    if (window.innerWidth >= 769) {
+      eventArticle.classList.remove('hide');
+    }
+    if (window.matchMedia("(min-width: 320px)").matches && window.matchMedia("(max-width: 768px)").matches) {
+      eventArticle.classList.add('hide');
+    }
   };
   resizeBlock();
   window.onresize = resizeBlock;
@@ -183,16 +190,30 @@ document.addEventListener('DOMContentLoaded',function(){
       });
     });
   });
-
-  // document.querySelectorAll('.artist-years__btn').forEach(function(tabBtn) {
-  //   tabBtn.addEventListener('click', function(event) {
-  //     const path = event.currentTarget.dataset.path;
-  //     document.querySelectorAll('.catalog__artist-descr').forEach(function(tabArtist) {
-  //         tabArtist.classList.remove('catalog__artist-descr--active');
-  //     });
-  //     document.querySelector(`[data-target="${path}"]`).classList.add('catalog__artist-descr--active');
-  //     $('.accordion').accordion("refresh");
-  //   });
-  // });
   //artist tabs
+
+  //events
+  var eventsBtn = document.getElementById('events-btn');
+  eventsBtn.addEventListener('click', function () {
+    document.querySelectorAll('.events__item').forEach(function(el){
+      el.classList.remove('hide');
+    });
+    eventsBtn.classList.add('hide');
+  })
+  //events
+  //events Swiper
+  const eventsSwiper = new Swiper('.events__list--mobile', {
+
+    pagination: {
+      el: ".events__swiper-pagination",
+      clickable: true,
+      type: "bullets",
+      bulletActiveClass: "events__swiper-pagination-bullet-active",
+      bulletClass: "events__swiper-pagination-bullet",
+      clickableClass: "events__swiper-pagination-clickable",
+      currentClass: "events__swiper-pagination-current"
+
+    }
+  });
+  //events Swiper
 });
