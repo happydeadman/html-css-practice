@@ -49,14 +49,7 @@ document.addEventListener('DOMContentLoaded',function(){
   //resizeHeight
   function resizeBlock () {
     var newHeigth = document.getElementById("header").offsetHeight + document.getElementById("hero").offsetHeight;
-    var eventArticle = document.getElementById('event-article');
     document.getElementById("burger-menu").style.height = newHeigth + "px";
-    if (window.innerWidth >= 769) {
-      eventArticle.classList.remove('hide');
-    }
-    if (window.matchMedia("(min-width: 320px)").matches && window.matchMedia("(max-width: 768px)").matches) {
-      eventArticle.classList.add('hide');
-    }
   };
   resizeBlock();
   window.onresize = resizeBlock;
@@ -196,24 +189,172 @@ document.addEventListener('DOMContentLoaded',function(){
   var eventsBtn = document.getElementById('events-btn');
   eventsBtn.addEventListener('click', function () {
     document.querySelectorAll('.events__item').forEach(function(el){
-      el.classList.remove('hide');
+      el.style.display = "flex";
     });
-    eventsBtn.classList.add('hide');
+    this.style.display = "none";
   })
   //events
   //events Swiper
-  const eventsSwiper = new Swiper('.events__list--mobile', {
-
-    pagination: {
-      el: ".events__swiper-pagination",
-      clickable: true,
-      type: "bullets",
-      bulletActiveClass: "events__swiper-pagination-bullet-active",
-      bulletClass: "events__swiper-pagination-bullet",
-      clickableClass: "events__swiper-pagination-clickable",
-      currentClass: "events__swiper-pagination-current"
-
+  const slider = document.querySelector('.events__list-container');
+  let evSwiper;
+  function mobileSlider() {
+    if (window.innerWidth <= 767 && slider.dataset.mobile == 'false') {
+      evSwiper = new Swiper(slider, {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        loop: true,
+        pagination: {
+          el: ".events__swiper-pagination",
+          clickable: true,
+          type: "bullets",
+          bulletActiveClass: "events__swiper-pagination-bullet-active",
+          bulletClass: "events__swiper-pagination-bullet",
+          clickableClass: "events__swiper-pagination-clickable",
+          currentClass: "events__swiper-pagination-current"
+        },
+      });
+  
+      slider.dataset.mobile = 'true';
     }
+  
+    if (window.innerWidth > 767 && slider.dataset.mobile == 'true') {
+      slider.dataset.mobile = 'false';
+      if (slider.classList.contains('swiper-initialized')) {
+        evSwiper.destroy();
+      };
+    };
+  };
+  mobileSlider();
+  window.addEventListener('resize', () => {
+    mobileSlider();
+    initPubSwiper();
   });
+  // const eventsSwiper = new Swiper('.events__list-container', {
+
+  //   pagination: {
+  //     el: ".events__swiper-pagination",
+  //     clickable: true,
+  //     type: "bullets",
+  //     bulletActiveClass: "events__swiper-pagination-bullet-active",
+  //     bulletClass: "events__swiper-pagination-bullet",
+  //     clickableClass: "events__swiper-pagination-clickable",
+  //     currentClass: "events__swiper-pagination-current"
+  //   }
+  // });
   //events Swiper
+  //publishers Swiper
+  const piblishersSwiper = document.querySelector('.publishers__swiper');
+  let pubItems = document.querySelectorAll('.publishers__item');
+
+  let pubSwiper;
+  function initPubSwiper () {
+    if (window.innerWidth > 767 && piblishersSwiper.dataset.mobile == 'true') {
+      pubSwiper = new Swiper(piblishersSwiper, {
+        slidesPerView: 3,
+        spaceBetween: 50,
+        loop: true,
+        slideClass: 'publishers__item',
+        pagination: {
+          el: '.publishers__pagination',
+          clickable: true,
+          type: "fraction",
+        },
+        navigation: {
+          nextEl: '.publishers__arrow-next',
+          prevEl: '.publishers__arrow-prev',
+        },
+        breakpoints: {
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          769: {
+            slidesPerView: 2,
+            spaceBetween: 50
+          },
+          1440: {
+            slidesPerView: 3,
+            spaceBetween: 50
+          }
+        },
+      });
+      piblishersSwiper.dataset.mobile = 'false';
+    };
+
+    if (window.innerWidth <= 767 && piblishersSwiper.dataset.mobile == 'false') {
+
+      if (piblishersSwiper.classList.contains('swiper-initialized')) {
+        pubSwiper.destroy();
+      };
+      piblishersSwiper.dataset.mobile = 'true';
+    }
+  };
+  initPubSwiper();
+  //publishers Swiper
+  //pub checkbox mobile
+  let pubBtn = ".categories__title";
+  let labels = ".checkbox-label";
+  let labelsList = ".categories__list";
+  let labelsListActive = "checklist-active";
+  let labelActive = "checkbox--label-active";
+  let animationClass = "animation";
+  let inputCheckbox = ".checkbox";
+
+  function checkboxToggle(a, b, c, labelsListActive, labelActive, animationClass, inputCheckbox) {
+    let pubBtn = document.querySelector(a);
+    let labels = document.querySelectorAll(b);
+    let listLabels = document.querySelector(c);
+    pubBtn.addEventListener("click", toggleSpoiler);
+    pubBtn.addEventListener("click", function() {
+      this.classList.toggle('active')
+    })
+    pubBtn.addEventListener("keyup", function(e) {
+      console.log(e.key);
+      if (e.code === "Enter") {
+        toggleSpoiler();
+      };
+    }) ;   
+  function toggleSpoiler() {
+      if (!listLabels.classList.contains(labelsListActive)) {
+      listLabels.classList.add(labelsListActive);
+      labels.forEach(item => {
+       // item.classList.add("checkbox--label-active");
+        animationItem(item, labelActive, animationClass, "add");
+      })
+    } else {
+      listLabels.classList.remove(labelsListActive);
+      labels.forEach(item => {
+        if (item.querySelector(inputCheckbox).checked) {
+        animationItem(item, labelActive, animationClass, "add");
+        } else {
+          animationItem(item, labelActive, animationClass, "remove");
+        }
+        });
+    }
+    labels.forEach(item => {
+      item.addEventListener("click", function() {
+        if (!listLabels.classList.contains(labelsListActive)) {
+          animationItem(this, labelActive, animationClass, "remove");
+        }
+      });
+    })
+  }
+  function animationItem(item, class1, class2, f) {
+   if (f === "add") {
+      item.classList.add(class1);
+    setTimeout(function() {
+      item.classList.add(class2)
+    }, 100);
+  
+   } else {
+       item.classList.remove(class2);
+    setTimeout(function() {
+      item.classList.remove(class1)
+    }, 300);
+    }
+   
+  }
+}
+checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animationClass, inputCheckbox);
+  //pub checkbox mobile
 });
