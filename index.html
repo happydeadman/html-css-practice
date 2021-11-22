@@ -16,6 +16,9 @@
     <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script defer src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script defer src="src/just-validate.min.js"></script>
+    <script defer src="src/inputmask.min.js"></script>
+    <script defer src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
     <script defer src="src/index.js"></script>
     <noscript>
         <style>
@@ -42,8 +45,8 @@
                         <li class="header__nav-item"><a href="#catalog" class="header__link link">Каталог</a></li>
                         <li class="header__nav-item"><a href="#events" class="header__link link">События</a></li>
                         <li class="header__nav-item"><a href="#publishers" class="header__link link">Издания</a></li>
-                        <li class="header__nav-item"><a href="#" class="header__link link">Проекты</a></li>
-                        <li class="header__nav-item"><a href="#" class="header__link link">Контакты</a></li>
+                        <li class="header__nav-item"><a href="#projects" class="header__link link">Проекты</a></li>
+                        <li class="header__nav-item"><a href="#contacts" class="header__link link">Контакты</a></li>
                     </ul>
                     <a href="#" class="header__enter outline-focus header__enter--burger">
                         <svg width="13" height="13" viewBox="0 0 13 13" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -118,15 +121,24 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-item__content" data-simplebar>
-                                <li class="dropdown-item__subitem real1"><a href="#" class="dropdown-item__link">Тинторетто</a></li>
-                                <li class="dropdown-item__subitem real2"><a href="#" class="dropdown-item__link">Фридрих</a></li>
-                                <li class="dropdown-item__subitem real3"><a href="#" class="dropdown-item__link">Леонардо</a></li>
-                                <li class="dropdown-item__subitem real4"><a href="#" class="dropdown-item__link">Верроккьо</a></li>
-                                <li class="dropdown-item__subitem real1"><a href="#" class="dropdown-item__link">Тинторетто</a></li>
-                                <li class="dropdown-item__subitem real2"><a href="#" class="dropdown-item__link">Фридрих</a></li>
-                                <li class="dropdown-item__subitem real3"><a href="#" class="dropdown-item__link">Леонардо</a></li>
-                                <li class="dropdown-item__subitem real4"><a href="#" class="dropdown-item__link">Верроккьо</a></li>
-                                <li class="dropdown-item__subitem real3"><a href="#" class="dropdown-item__link">Леонардо</a></li>
+                                <li class="dropdown-item__subitem real1"><a href="#"
+                                        class="dropdown-item__link">Тинторетто</a></li>
+                                <li class="dropdown-item__subitem real2"><a href="#"
+                                        class="dropdown-item__link">Фридрих</a></li>
+                                <li class="dropdown-item__subitem real3"><a href="#"
+                                        class="dropdown-item__link">Леонардо</a></li>
+                                <li class="dropdown-item__subitem real4"><a href="#"
+                                        class="dropdown-item__link">Верроккьо</a></li>
+                                <li class="dropdown-item__subitem real1"><a href="#"
+                                        class="dropdown-item__link">Тинторетто</a></li>
+                                <li class="dropdown-item__subitem real2"><a href="#"
+                                        class="dropdown-item__link">Фридрих</a></li>
+                                <li class="dropdown-item__subitem real3"><a href="#"
+                                        class="dropdown-item__link">Леонардо</a></li>
+                                <li class="dropdown-item__subitem real4"><a href="#"
+                                        class="dropdown-item__link">Верроккьо</a></li>
+                                <li class="dropdown-item__subitem real3"><a href="#"
+                                        class="dropdown-item__link">Леонардо</a></li>
                             </ul>
                         </li>
                         <li class="header__dropdown-item dropdown-item" data-dropdown>
@@ -138,14 +150,22 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-item__content" data-simplebar>
-                                <li class="dropdown-item__subitem expr1"><a href="#" class="dropdown-item__link">Моне</a></li>
-                                <li class="dropdown-item__subitem expr2"><a href="#" class="dropdown-item__link">Сислей</a></li>
-                                <li class="dropdown-item__subitem expr3"><a href="#" class="dropdown-item__link">Мане</a></li>
-                                <li class="dropdown-item__subitem expr4"><a href="#" class="dropdown-item__link">Ренуар</a></li>
-                                <li class="dropdown-item__subitem expr1"><a href="#" class="dropdown-item__link">Моне</a></li>
-                                <li class="dropdown-item__subitem expr2"><a href="#" class="dropdown-item__link">Сислей</a></li>
-                                <li class="dropdown-item__subitem expr3"><a href="#" class="dropdown-item__link">Мане</a></li>
-                                <li class="dropdown-item__subitem expr4"><a href="#" class="dropdown-item__link">Ренуар</a></li>
+                                <li class="dropdown-item__subitem expr1"><a href="#"
+                                        class="dropdown-item__link">Моне</a></li>
+                                <li class="dropdown-item__subitem expr2"><a href="#"
+                                        class="dropdown-item__link">Сислей</a></li>
+                                <li class="dropdown-item__subitem expr3"><a href="#"
+                                        class="dropdown-item__link">Мане</a></li>
+                                <li class="dropdown-item__subitem expr4"><a href="#"
+                                        class="dropdown-item__link">Ренуар</a></li>
+                                <li class="dropdown-item__subitem expr1"><a href="#"
+                                        class="dropdown-item__link">Моне</a></li>
+                                <li class="dropdown-item__subitem expr2"><a href="#"
+                                        class="dropdown-item__link">Сислей</a></li>
+                                <li class="dropdown-item__subitem expr3"><a href="#"
+                                        class="dropdown-item__link">Мане</a></li>
+                                <li class="dropdown-item__subitem expr4"><a href="#"
+                                        class="dropdown-item__link">Ренуар</a></li>
                             </ul>
                         </li>
                         <li class="header__dropdown-item dropdown-item" data-dropdown>
@@ -157,14 +177,22 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-item__content" data-simplebar>
-                                <li class="dropdown-item__subitem post1"><a href="#" class="dropdown-item__link">Ван Гог</a></li>
-                                <li class="dropdown-item__subitem post2"><a href="#" class="dropdown-item__link">Сезанн</a></li>
-                                <li class="dropdown-item__subitem post3"><a href="#" class="dropdown-item__link">Гоген</a></li>
-                                <li class="dropdown-item__subitem post4"><a href="#" class="dropdown-item__link">Сёра</a></li>
-                                <li class="dropdown-item__subitem post1"><a href="#" class="dropdown-item__link">Ван Гог</a></li>
-                                <li class="dropdown-item__subitem post2"><a href="#" class="dropdown-item__link">Сезанн</a></li>
-                                <li class="dropdown-item__subitem post3"><a href="#" class="dropdown-item__link">Гоген</a></li>
-                                <li class="dropdown-item__subitem post4"><a href="#" class="dropdown-item__link">Сёра</a></li>
+                                <li class="dropdown-item__subitem post1"><a href="#" class="dropdown-item__link">Ван
+                                        Гог</a></li>
+                                <li class="dropdown-item__subitem post2"><a href="#"
+                                        class="dropdown-item__link">Сезанн</a></li>
+                                <li class="dropdown-item__subitem post3"><a href="#"
+                                        class="dropdown-item__link">Гоген</a></li>
+                                <li class="dropdown-item__subitem post4"><a href="#"
+                                        class="dropdown-item__link">Сёра</a></li>
+                                <li class="dropdown-item__subitem post1"><a href="#" class="dropdown-item__link">Ван
+                                        Гог</a></li>
+                                <li class="dropdown-item__subitem post2"><a href="#"
+                                        class="dropdown-item__link">Сезанн</a></li>
+                                <li class="dropdown-item__subitem post3"><a href="#"
+                                        class="dropdown-item__link">Гоген</a></li>
+                                <li class="dropdown-item__subitem post4"><a href="#"
+                                        class="dropdown-item__link">Сёра</a></li>
                             </ul>
                         </li>
                         <li class="header__dropdown-item dropdown-item" data-dropdown>
@@ -176,14 +204,22 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-item__content" data-simplebar>
-                                <li class="dropdown-item__subitem avan1"><a href="#" class="dropdown-item__link">Кандинский</a></li>
-                                <li class="dropdown-item__subitem avan2"><a href="#" class="dropdown-item__link">Маринетти</a></li>
-                                <li class="dropdown-item__subitem avan3"><a href="#" class="dropdown-item__link">Малевич</a></li>
-                                <li class="dropdown-item__subitem avan4"><a href="#" class="dropdown-item__link">Пикассо</a></li>
-                                <li class="dropdown-item__subitem avan1"><a href="#" class="dropdown-item__link">Кандинский</a></li>
-                                <li class="dropdown-item__subitem avan2"><a href="#" class="dropdown-item__link">Маринетти</a></li>
-                                <li class="dropdown-item__subitem avan3"><a href="#" class="dropdown-item__link">Малевич</a></li>
-                                <li class="dropdown-item__subitem avan4"><a href="#" class="dropdown-item__link">Пикассо</a></li>
+                                <li class="dropdown-item__subitem avan1"><a href="#"
+                                        class="dropdown-item__link">Кандинский</a></li>
+                                <li class="dropdown-item__subitem avan2"><a href="#"
+                                        class="dropdown-item__link">Маринетти</a></li>
+                                <li class="dropdown-item__subitem avan3"><a href="#"
+                                        class="dropdown-item__link">Малевич</a></li>
+                                <li class="dropdown-item__subitem avan4"><a href="#"
+                                        class="dropdown-item__link">Пикассо</a></li>
+                                <li class="dropdown-item__subitem avan1"><a href="#"
+                                        class="dropdown-item__link">Кандинский</a></li>
+                                <li class="dropdown-item__subitem avan2"><a href="#"
+                                        class="dropdown-item__link">Маринетти</a></li>
+                                <li class="dropdown-item__subitem avan3"><a href="#"
+                                        class="dropdown-item__link">Малевич</a></li>
+                                <li class="dropdown-item__subitem avan4"><a href="#"
+                                        class="dropdown-item__link">Пикассо</a></li>
                             </ul>
                         </li>
                         <li class="header__dropdown-item dropdown-item" data-dropdown>
@@ -195,14 +231,22 @@
                                 </svg>
                             </button>
                             <ul class="dropdown-item__content" id="dropdown-content" data-simplebar>
-                                <li class="dropdown-item__subitem fut1"><a href="#" class="dropdown-item__link">Карра</a></li>
-                                <li class="dropdown-item__subitem fut2"><a href="#" class="dropdown-item__link">Прателла</a></li>
-                                <li class="dropdown-item__subitem fut3"><a href="#" class="dropdown-item__link">Северини</a></li>
-                                <li class="dropdown-item__subitem fut4"><a href="#" class="dropdown-item__link">Балла</a></li>
-                                <li class="dropdown-item__subitem fut1"><a href="#" class="dropdown-item__link">Карра</a></li>
-                                <li class="dropdown-item__subitem fut2"><a href="#" class="dropdown-item__link">Прателла</a></li>
-                                <li class="dropdown-item__subitem fut3"><a href="#" class="dropdown-item__link">Северини</a></li>
-                                <li class="dropdown-item__subitem fut4"><a href="#" class="dropdown-item__link">Балла</a></li>
+                                <li class="dropdown-item__subitem fut1"><a href="#"
+                                        class="dropdown-item__link">Карра</a></li>
+                                <li class="dropdown-item__subitem fut2"><a href="#"
+                                        class="dropdown-item__link">Прателла</a></li>
+                                <li class="dropdown-item__subitem fut3"><a href="#"
+                                        class="dropdown-item__link">Северини</a></li>
+                                <li class="dropdown-item__subitem fut4"><a href="#"
+                                        class="dropdown-item__link">Балла</a></li>
+                                <li class="dropdown-item__subitem fut1"><a href="#"
+                                        class="dropdown-item__link">Карра</a></li>
+                                <li class="dropdown-item__subitem fut2"><a href="#"
+                                        class="dropdown-item__link">Прателла</a></li>
+                                <li class="dropdown-item__subitem fut3"><a href="#"
+                                        class="dropdown-item__link">Северини</a></li>
+                                <li class="dropdown-item__subitem fut4"><a href="#"
+                                        class="dropdown-item__link">Балла</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -1781,7 +1825,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="events__item swiper-slide" id="event-article">
+                        <li class="events__item swiper-slide">
                             <picture>
                                 <source media="(min-width: 1920px)" srcset="img/events/event3.jpg">
                                 <source media="(min-width: 1024px)" srcset="img/events/eventT3.jpg">
@@ -1854,7 +1898,7 @@
                     </div>
                 </div>
 
-               
+
                 <div class="events__btn-container">
                     <button class="btn events__btn outline-focus" id="events-btn">Все события</button>
                 </div>
@@ -1865,100 +1909,237 @@
                 <div class="publishers__left">
                     <h2 class="publishers__title heading">Издания</h2>
                     <div class="publishers__categories categories">
-                        <h3 class="heading categories__title">Категории <span class="categories__title-arrow"><svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M11.3393 1.16934L6.16992 6.33869L1.00058 1.16934"/>
-                            </svg>
+                        <h3 class="heading categories__title">Категории <span class="categories__title-arrow"><svg
+                                    width="12" height="8" viewBox="0 0 12 8" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.3393 1.16934L6.16992 6.33869L1.00058 1.16934" />
+                                </svg>
                             </span></h3>
                         <ul class="categories__list">
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
+                                    <input type="checkbox" class="checkbox" required>
                                     <span class="checkmark"></span>
                                     <span class="checkbox-label__text">Бестселлеры</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Искусство</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Искусство</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Архитектура</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Архитектура</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
+                                </label>
+                            </li>
+                            <li class="categories__item">
+                                <label class="checkbox-label checkbox--label-active animation">
+                                    <input type="checkbox" class="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Дизайн</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Дизайн</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Мода</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Мода</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Детям</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Детям</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Художественная литература</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Художественная литература</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Публицистика</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Публицистика</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Путеводители</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Путеводители</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Философия</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Философия</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Учебная литература</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                             <li class="categories__item">
                                 <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Учебная литература</span>
-                                </label>
-                            </li>
-                            <li class="categories__item">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" class="checkbox" required> 
-                                       <span class="checkmark"></span>
-                                       <span class="checkbox-label__text">Журналы и газеты</span>
+                                    <input type="checkbox" class="checkbox" required>
+                                    <span class="checkmark"></span>
+                                    <span class="checkbox-label__text">Журналы и газеты</span>
+                                    <span class="categories__item-close">
+                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.501981 11.4789L11.502 0.000216305L12.002 0.521973L1.00198 12.0006L0.501981 11.4789Z"
+                                                fill="#C283F3" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M0.500026 9.03416e-05L11.5 11.4787L11 12.0005L2.74963e-05 0.521847L0.500026 9.03416e-05Z"
+                                                fill="#C283F3" />
+                                        </svg>
+                                    </span>
                                 </label>
                             </li>
                         </ul>
                         <div class="publishers__cost cost">
                             <h3 class="heading cost__title">Цена</h3>
                             <div class="cost__input-container">
-                                <span class="cost__text">От</span> <span class="cost__input-bg"><input class="cost__input" type="number" value="50"></span> <span class="cost__text">до</span> <span class="cost__input-bg"><input class="cost__input" type="number" value="25000"></span> руб.
+                                <span class="cost__text">От</span> <span class="cost__input-bg"><input
+                                        class="cost__input" type="number" value="50"></span> <span
+                                    class="cost__text">до</span> <span class="cost__input-bg"><input class="cost__input"
+                                        type="number" value="25000"></span> руб.
                             </div>
                         </div>
                     </div>
@@ -1992,7 +2173,8 @@
                                     <source media="(min-width: 1024px)" srcset="img/publishers/publisherT1.jpg">
                                     <source media="(min-width: 768px)" srcset="img/publishers/publisherS1.jpg">
                                     <source media="(min-width: 320px)" srcset="img/publishers/publisherM1.jpg">
-                                    <img class="publishers__img" src="img/publishers/publisher1.jpg" alt="Искусство цвета">
+                                    <img class="publishers__img" src="img/publishers/publisher1.jpg"
+                                        alt="Искусство цвета">
                                 </picture>
                                 <div class="publishers__article-text flex">
                                     <div class="publishers__article-text-left">
@@ -2030,7 +2212,8 @@
                                     <source media="(min-width: 1024px)" srcset="img/publishers/publisherT3.jpg">
                                     <source media="(min-width: 768px)" srcset="img/publishers/publisherS3.jpg">
                                     <source media="(min-width: 320px)" srcset="img/publishers/publisherM3.jpg">
-                                    <img class="publishers__img" src="img/publishers/publisher3.jpg" alt="Книга про буквы">
+                                    <img class="publishers__img" src="img/publishers/publisher3.jpg"
+                                        alt="Книга про буквы">
                                 </picture>
                                 <div class="publishers__article-text flex">
                                     <div class="publishers__article-text-left">
@@ -2049,7 +2232,8 @@
                                     <source media="(min-width: 1024px)" srcset="img/publishers/publisherT4.jpg">
                                     <source media="(min-width: 768px)" srcset="img/publishers/publisherS4.jpg">
                                     <source media="(min-width: 320px)" srcset="img/publishers/publisherM4.jpg">
-                                    <img class="publishers__img" src="img/publishers/publisher4.jpg" alt="Николай Ильин">
+                                    <img class="publishers__img" src="img/publishers/publisher4.jpg"
+                                        alt="Николай Ильин">
                                 </picture>
                                 <div class="publishers__article-text flex">
                                     <div class="publishers__article-text-left">
@@ -2068,7 +2252,8 @@
                                     <source media="(min-width: 1024px)" srcset="img/publishers/publisherT5.jpg">
                                     <source media="(min-width: 768px)" srcset="img/publishers/publisherS5.jpg">
                                     <source media="(min-width: 320px)" srcset="img/publishers/publisherM5.jpg">
-                                    <img class="publishers__img" src="img/publishers/publisher5.jpg" alt="Модульные сетки в графическом дизайне">
+                                    <img class="publishers__img" src="img/publishers/publisher5.jpg"
+                                        alt="Модульные сетки в графическом дизайне">
                                 </picture>
                                 <div class="publishers__article-text flex">
                                     <div class="publishers__article-text-left">
@@ -2087,7 +2272,8 @@
                                     <source media="(min-width: 1024px)" srcset="img/publishers/publisherT6.jpg">
                                     <source media="(min-width: 768px)" srcset="img/publishers/publisherS6.jpg">
                                     <source media="(min-width: 320px)" srcset="img/publishers/publisherM6.jpg">
-                                    <img class="publishers__img" src="img/publishers/publisher6.jpg" alt="Эволюция графических стилей">
+                                    <img class="publishers__img" src="img/publishers/publisher6.jpg"
+                                        alt="Эволюция графических стилей">
                                 </picture>
                                 <div class="publishers__article-text flex">
                                     <div class="publishers__article-text-left">
@@ -2106,7 +2292,8 @@
                                     <source media="(min-width: 1024px)" srcset="img/publishers/publisherT7.jpg">
                                     <source media="(min-width: 768px)" srcset="img/publishers/publisherS7.jpg">
                                     <source media="(min-width: 320px)" srcset="img/publishers/publisherM7.jpg">
-                                    <img class="publishers__img" src="img/publishers/publisher7.jpg" alt="Искусство и визуальное восприятие">
+                                    <img class="publishers__img" src="img/publishers/publisher7.jpg"
+                                        alt="Искусство и визуальное восприятие">
                                 </picture>
                                 <div class="publishers__article-text flex">
                                     <div class="publishers__article-text-left">
@@ -2122,57 +2309,134 @@
                 </div>
             </div>
         </section>
-        <!-- <section class="projects">
-            <h2 class="projects__title heading">Проекты</h2>
-            <p class="projects__text">
-                Предварительные выводы: постоянное информационно-пропагандистское обеспечение нашей деятельности
-                однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А&nbsp;ещё независимые
-                государства смешаны с&nbsp;не&nbsp;уникальными данными до&nbsp;степени совершенной неузнаваемости, из-за
-                чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное информационно-пропагандистское
-                обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности
-                принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть рассмотрены
-                исключительно в&nbsp;разрезе маркетинговых и&nbsp;финансовых предпосылок. Банальные,
-                но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают нас
-                к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны с&nbsp;не&nbsp;уникальными
-                данными до&nbsp;степени совершенной неузнаваемости. Подробнее: <a href="#" target="_blank"
-                    class="link projects__link">blanchard-art.ru/projects/about</a>
-            </p>
-            <h3 class="projects__partners">Партнёры проектов</h3>
-            <div class="projects__slider">
+        <section class="projects" id="projects">
+            <div class="projects__container container">
+                <h2 class="projects__title heading">Проекты</h2>
+                <div class="projects__text">
+                    Предварительные выводы: постоянное информационно&nbsp;-пропагандистское обеспечение нашей
+                    деятельности
+                    однозначно фиксирует необходимость своевременного выполнения сверхзадачи. А ещё независимые
+                    государства смешаны с&nbsp;не&nbsp;уникальными данными до степени совершенной неузнаваемости, из-за
+                    чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное
+                    информационно-пропагандистское
+                    <div class="projects__tooltip tooltip" tabindex="0">
+                        <div class="projects__popup popup">Пример современных тенденций&nbsp;&mdash; современная
+                            методология
+                            разработки</div>
+                    </div>
+
+                    обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности
+                    принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть
+                    рассмотрены <div class="projects__tooltip tooltip" tabindex="0">
+                        <div class="projects__popup popup">Приятно, граждане, наблюдать, как сделанные на&nbsp;базе
+                            аналитики выводы
+                            вызывают
+                            у&nbsp;вас эмоции</div>
+                    </div>
+
+                    исключительно в&nbsp;разрезе маркетинговых и&nbsp; <div class="projects__tooltip tooltip"
+                        tabindex="0">
+                        <div class="projects__popup popup">В&nbsp;стремлении повысить качество</div>
+                    </div>
+
+                    финансовых предпосылок. Банальные,
+                    но&nbsp;неопровержимые выводы, а&nbsp;также представители современных социальных резервов призывают
+                    нас
+                    к&nbsp;новым свершениям, которые, в&nbsp;свою очередь, должны быть смешаны
+                    с&nbsp;не&nbsp;уникальными
+                    данными до&nbsp;степени совершенной неузнаваемости. Подробнее: <a href="#" target="_blank"
+                        class="link projects__link">blanchard-art.ru/projects/about</a>
+                </div>
+                <h3 class="projects__partners">Партнёры проектов:</h3>
+                <div class="projects__swiper">
+                    <button aria-label="Предыдущий слайд" class="projects__arrow-prev arrow-prev">
+                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path class="svg-circle"
+                                d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
+                            <path class="svg-stroke" d="M16 20L11 15L16 10" />
+                        </svg>
+                    </button>
+                    <ul class="projects__partners-list swiper-wrapper flex">
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner1.png" alt="Freelands Foundation"
+                                class="projects__partners-img">
+                        </li>
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner2.png" class="projects__partners-img"
+                                alt="Institute for Contemporary Art">
+                        </li>
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner3.png" class="projects__partners-img"
+                                alt="Workhouse Arts center">
+                        </li>
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner4.png" class="projects__partners-img" alt="1849">
+                        </li>
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner5.png" class="projects__partners-img" alt="HISCOX">
+                        </li>
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner6.png" class="projects__partners-img" alt="Stassen">
+                        </li>
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner7.png" class="projects__partners-img" alt="Watts Gallery">
+                        </li>
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner8.png" class="projects__partners-img"
+                                alt="Camden arts centre">
+                        </li>
+                        <li class="projects__partners-item swiper-slide">
+                            <img src="img/projects/partner9.png" class="projects__partners-img" alt="Esad">
+                        </li>
+                    </ul>
+                    <button aria-label="Следующий слайд" class="projects__arrow-next arrow-next">
+                        <svg width="30" height="30" fill="none" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                            <path class="svg-circle"
+                                d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
+                            <path class="svg-stroke" d="M14 20L19 15L14 10" />
+                        </svg>
+                    </button>
+                </div>
             </div>
-        </section> -->
-        <!-- <section class="contacts">
+        </section>
+        <section class="contacts" id="contacts">
             <div class="contacts__container container">
                 <h2 class="contacts__title heading">Контакты</h2>
-                <div class="contacts__address">
-                    Шоурум &#8470;&nbsp;4
-                    Леонтьевский переулок, дом 5/1
-                </div>
-                <form action="https://jsonplaceholder.typicode.com/posts" autocomplete="on" method="post"
-                    class="form contacts__form">
-                    <div class="contacts__mask-container">
-                        <label class="contacts__label" for="#">
-                            Заказать обратный звонок
-                            <input type="text">
-                            <input type="tel" name="phone" id="phone">
-                        </label>
-                        <button class="contacts__btn btn">Заказать</button>
+                <div class="contacts__wrapper flex">
+                    <div class="contacts__left flex">
+                        <address class="contacts__address">
+                            <h4 class="contacts__build-name">Шоурум &#8470;&nbsp;2</h4>
+                            Леонтьевский переулок, дом 5/1
+                        </address>
+                        <h4 class="contacts__form-title">Заказать обратный звонок</h4>
+                        <form action="https://jsonplaceholder.typicode.com/posts" autocomplete="on" method="post"
+                            class="form contacts__form">
+                            <div class="form__mask-container">
+                                <label for="name" class="form__label"><input id="name" type="text" class="form__input"
+                                        placeholder="Имя*" data-validate-field="name"></label>
+                                <label for="phone" class="form__label"><input type="tel" name="phone" id="phone"
+                                        class="form__input" placeholder="Телефон*" data-validate-field="phone"></label>
+                                <div class="form__btn-container"><button class="form__btn  outline-focus">Заказать</button></div>
+                            </div>
+                        </form>
+                        <h4 class="contacts__social-title ">
+                            Связаться в один клик
+                        </h4>
+                        <div class="contacts__social social">
+                            <a href="#" target="_blanck" class="social__icon whatsup"></a>
+                            <a href="#" target="_blanck" class="social__icon tg"></a>
+                        </div>
                     </div>
-                </form>
-                <div class="contacts__social social">
-                    Связаться в один клик
-                    <a href="#" class="social__icon">
-                
-                    </a>
-                    <a href="#" class="social__icon">
-                
-                    </a>
-                </div>
-                <div class="contacts__map">
-                
+                    <div class="contacts__map-section">
+                        <address class="contacts__address">
+                            <h4 class="contacts__build-name">Шоурум &#8470;&nbsp;2</h4>
+                            Леонтьевский переулок, дом 5/1
+                        </address>
+                        <div id="map" class="contacts__map"></div>
+                    </div>
                 </div>
             </div>
-        </section> -->
+        </section>
     </main>
     <!-- <footer class="footer">
         <div class="container footer__container">

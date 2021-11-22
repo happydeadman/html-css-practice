@@ -203,6 +203,7 @@ document.addEventListener('DOMContentLoaded',function(){
         slidesPerView: 1,
         spaceBetween: 10,
         loop: true,
+        slideClass: "events__item",
         pagination: {
           el: ".events__swiper-pagination",
           clickable: true,
@@ -266,7 +267,7 @@ document.addEventListener('DOMContentLoaded',function(){
         breakpoints: {
           320: {
             slidesPerView: 2,
-            spaceBetween: 30,
+            spaceBetween: 40,
           },
           769: {
             slidesPerView: 2,
@@ -357,4 +358,97 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animationClass, inputCheckbox);
   //pub checkbox mobile
+
+  //projects swiper
+  var projectSwiper = new Swiper(".projects__swiper", {
+    slidesPerView: 3,
+    spaceBetween: 50,
+    loop: true,
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+        spaceBetween: 50
+      },
+      1440: {
+        slidesPerView: 3,
+        spaceBetween: 50
+      }
+    },
+    // setWrapperSize: true,
+    navigation: {
+      nextEl: '.projects__arrow-next',
+      prevEl: '.projects__arrow-prev',
+    },
+    a11y: {
+      prevSlideMessage: 'Предыдущий',
+      nextSlideMessage: 'Следующий',
+    },
+  });
+    //projects swiper
+    // contacts validate
+    var phoneSelector = document.querySelector("input[type='tel']");
+
+    var im = new Inputmask("+7(999) 999-99-99");
+    im.mask(phoneSelector);
+
+    new JustValidate('.contacts__form', {
+      rules: {
+        name: {
+          required: true,
+          minLength: 3,
+          maxLength: 15,
+        },
+        phone: {
+          function: (name, value) => {
+            const phoneNum = phoneSelector.inputmask.unmaskedvalue();
+            return Number(phoneNum) && phoneNum.length === 10;
+          },
+          required: true
+        },
+      },
+      messages: {
+        name: {
+          minLength: 'Минимальное число символов - 3',
+          maxLength: 'Маскимальное число символов - 15',
+          required: 'Поле обязательно для заполнения',
+        },
+        phone: {
+          function: 'Недопустимый формат',
+          required: 'Поле обязательно для заполнения',
+        },
+      },
+      colorWrong: '#D11616',
+    });
+    // map
+    ymaps.ready(init);
+    function init() {
+      var myMap = new ymaps.Map("map", {
+        center: [55.75846806898367,37.60108849999989],
+        zoom: 15,
+        controls: []
+        // controls: ['zoomControl', 'geolocationControl']
+      }, {
+        suppressMapOpenBlock: true
+      });
+
+      var myPlacemark = new ymaps.Placemark([55.75846806898367,37.60108849999989], {}, {
+        iconLayout: 'default#image',
+        iconImageHref: 'img/contacts/mapMark.svg',
+        iconImageSize: [30, 42],
+        iconImageOffset: [-3, -42]
+      });
+      // Размещение геообъекта на карте.
+      myMap.geoObjects.add(myPlacemark);
+      myMap.controls.add('zoomControl', {
+        position: {right: '40px', top: '5px'}
+      });
+      myMap.controls.add('geolocationControl', {
+        position: {right: '40px', top: '220px'},
+        size: 'small',
+      });
+    };
+      // map
 });
