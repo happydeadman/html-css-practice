@@ -16,6 +16,8 @@
     <script defer src="https://code.jquery.com/jquery-3.6.0.js"></script>
     <script defer src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script defer src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script defer src="https://unpkg.com/@popperjs/core@2/dist/umd/popper.min.js"></script>
+    <script defer src="https://unpkg.com/tippy.js@6/dist/tippy-bundle.umd.js"></script>
     <script defer src="src/just-validate.min.js"></script>
     <script defer src="src/inputmask.min.js"></script>
     <script defer src="https://api-maps.yandex.ru/2.1/?apikey=вашAPI-ключ&lang=ru_RU"></script>
@@ -2319,24 +2321,24 @@
                     государства смешаны с&nbsp;не&nbsp;уникальными данными до степени совершенной неузнаваемости, из-за
                     чего возрастает их&nbsp;статус бесполезности. Прежде всего, постоянное
                     информационно-пропагандистское
-                    <div class="projects__tooltip tooltip" tabindex="0">
-                        <div class="projects__popup popup">Пример современных тенденций&nbsp;&mdash; современная
+                    <div class="projects__tooltip tooltip" data-template="one" tabindex="0">
+                        <div class="projects__popup popup" id="one">Пример современных тенденций&nbsp;&mdash; современная
                             методология
                             разработки</div>
                     </div>
 
                     обеспечение нашей деятельности однозначно фиксирует необходимость экономической целесообразности
                     принимаемых решений. И&nbsp;нет сомнений, что действия представителей оппозиции могут быть
-                    рассмотрены <div class="projects__tooltip tooltip" tabindex="0">
-                        <div class="projects__popup popup">Приятно, граждане, наблюдать, как сделанные на&nbsp;базе
+                    рассмотрены <div class="projects__tooltip tooltip" data-template="two" tabindex="0">
+                        <div class="projects__popup popup" id="two">Приятно, граждане, наблюдать, как сделанные на&nbsp;базе
                             аналитики выводы
                             вызывают
                             у&nbsp;вас эмоции</div>
                     </div>
 
-                    исключительно в&nbsp;разрезе маркетинговых и&nbsp; <div class="projects__tooltip tooltip"
+                    исключительно в&nbsp;разрезе маркетинговых и&nbsp; <div data-template="three" class="projects__tooltip tooltip"
                         tabindex="0">
-                        <div class="projects__popup popup">В&nbsp;стремлении повысить качество</div>
+                        <div class="projects__popup popup" id="three">В&nbsp;стремлении повысить качество</div>
                     </div>
 
                     финансовых предпосылок. Банальные,
@@ -2348,54 +2350,56 @@
                         class="link projects__link">blanchard-art.ru/projects/about</a>
                 </div>
                 <h3 class="projects__partners">Партнёры проектов:</h3>
-                <div class="projects__swiper">
-                    <button aria-label="Предыдущий слайд" class="projects__arrow-prev arrow-prev">
-                        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path class="svg-circle"
-                                d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
-                            <path class="svg-stroke" d="M16 20L11 15L16 10" />
-                        </svg>
-                    </button>
-                    <ul class="projects__partners-list swiper-wrapper flex">
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner1.png" alt="Freelands Foundation"
-                                class="projects__partners-img">
-                        </li>
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner2.png" class="projects__partners-img"
-                                alt="Institute for Contemporary Art">
-                        </li>
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner3.png" class="projects__partners-img"
-                                alt="Workhouse Arts center">
-                        </li>
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner4.png" class="projects__partners-img" alt="1849">
-                        </li>
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner5.png" class="projects__partners-img" alt="HISCOX">
-                        </li>
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner6.png" class="projects__partners-img" alt="Stassen">
-                        </li>
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner7.png" class="projects__partners-img" alt="Watts Gallery">
-                        </li>
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner8.png" class="projects__partners-img"
-                                alt="Camden arts centre">
-                        </li>
-                        <li class="projects__partners-item swiper-slide">
-                            <img src="img/projects/partner9.png" class="projects__partners-img" alt="Esad">
-                        </li>
-                    </ul>
-                    <button aria-label="Следующий слайд" class="projects__arrow-next arrow-next">
-                        <svg width="30" height="30" fill="none" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-                            <path class="svg-circle"
-                                d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
-                            <path class="svg-stroke" d="M14 20L19 15L14 10" />
-                        </svg>
-                    </button>
+                <div class="projects__bottom">
+                    <div class="projects__swiper">
+                        <button aria-label="Предыдущий слайд" class="projects__arrow-prev arrow-prev">
+                            <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path class="svg-circle"
+                                    d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
+                                <path class="svg-stroke" d="M16 20L11 15L16 10" />
+                            </svg>
+                        </button>
+                        <ul class="projects__partners-list swiper-wrapper flex">
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner1.png" alt="Freelands Foundation"
+                                    class="projects__partners-img">
+                            </li>
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner2.png" class="projects__partners-img"
+                                    alt="Institute for Contemporary Art">
+                            </li>
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner3.png" class="projects__partners-img"
+                                    alt="Workhouse Arts center">
+                            </li>
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner4.png" class="projects__partners-img" alt="1849">
+                            </li>
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner5.png" class="projects__partners-img" alt="HISCOX">
+                            </li>
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner6.png" class="projects__partners-img" alt="Stassen">
+                            </li>
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner7.png" class="projects__partners-img" alt="Watts Gallery">
+                            </li>
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner8.png" class="projects__partners-img"
+                                    alt="Camden arts centre">
+                            </li>
+                            <li class="projects__partners-item swiper-slide">
+                                <img src="img/projects/partner9.png" class="projects__partners-img" alt="Esad">
+                            </li>
+                        </ul>
+                        <button aria-label="Следующий слайд" class="projects__arrow-next arrow-next">
+                            <svg width="30" height="30" fill="none" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+                                <path class="svg-circle"
+                                    d="M15 30C6.71573 30 8.89561e-07 23.2843 1.25168e-06 15C1.61379e-06 6.71573 6.71573 -1.01779e-06 15 -6.55671e-07C23.2843 -2.93554e-07 30 6.71573 30 15C30 23.2843 23.2843 30 15 30Z" />
+                                <path class="svg-stroke" d="M14 20L19 15L14 10" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2405,7 +2409,7 @@
                 <div class="contacts__wrapper flex">
                     <div class="contacts__left flex">
                         <address class="contacts__address">
-                            <div class="contacts__build-name">Шоурум &#8470;&nbsp;2</div>
+                            <div class="contacts__build-name">Шоурум №2</div>
                             Леонтьевский переулок, дом 5/1
                         </address>
                         <h4 class="contacts__form-title">Заказать обратный звонок</h4>
@@ -2430,7 +2434,7 @@
                     </div>
                     <div class="contacts__map-section">
                         <address class="contacts__address">
-                            <div class="contacts__build-name">Шоурум &#8470;&nbsp;2</div>
+                            <div class="contacts__build-name">Шоурум №2</div>
                             Леонтьевский переулок, дом 5/1
                         </address>
                         <div id="map" class="contacts__map"></div>

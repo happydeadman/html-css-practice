@@ -388,6 +388,16 @@ checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animat
     },
   });
     //projects swiper
+    //tooltip
+    tippy('.tooltip', {
+      content(reference) {
+        const id = reference.getAttribute('data-template');
+        const template = document.getElementById(id);
+        return template.innerHTML;
+      },
+      allowHTML: true,
+    });
+    //tooltip
     // contacts validate
     var phoneSelector = document.querySelector("input[type='tel']");
 
