@@ -1599,44 +1599,27 @@ input[type=number]{
 .tooltip:focus-visible .popup {
   opacity: 1;
 }
-.projects__tooltip svg { 
-  fill: var(--btn-color);
+.projects__tooltip-svg-circle, 
+.projects__tooltip-svg-stroke {
+  transition-property: fill, stroke;
+  transition-timing-function: ease;
+  transition-duration: .3s;
+}
+.projects__tooltip svg .projects__tooltip-svg-circle { 
+  stroke: var(--btn-color);
+}
+.projects__tooltip svg .projects__tooltip-svg-stroke{ 
   stroke: var(--black);
 }
-.projects__tooltip svg .tooltip-fill {
-  fill: white;
+.projects__tooltip:focus-visible svg .projects__tooltip-svg-circle,
+.projects__tooltip:hover svg .projects__tooltip-svg-circle {
+  fill: var(--btn-border);
 }
-.tooltip::before {
-content: '';
-position: absolute;
-bottom: -3px;
-left: -1px;
-width: 16px;
-height: 16px;
-border-radius: 50%;
-background-color: transparent;
-outline: 1px solid var(--btn-color);
-transition: background-color .3s ease;
+.projects__tooltip:active:not(:focus-visible) svg .projects__tooltip-svg-circle {
+  fill: var(--btn-color);
 }
-.tooltip:hover:before,
-.tooltip:focus-visible:before{
-  background-color: var(--btn-border);
-}
-.tooltip:active:not(:focus-visible):before {
-  background-color: var(--btn-color);
-}
-.tooltip::after {
-  content: 'i';
-  position: absolute;
-  top: -5px;
-  bottom: 0;
-  left: 5px;
-  right: 0;
-  font-weight: 600;
-  transition: color .3s ease;
-}
-.tooltip:active:not(:focus-visible)::after {
-  color: var(--header-text);
+.projects__tooltip:active:not(:focus-visible) svg .projects__tooltip-svg-stroke {
+  stroke: var(--header-text);
 }
 .popup {
   display: none;
@@ -1782,7 +1765,7 @@ left: 0;
   padding-top: 123px;
   padding-bottom: 119px;
   padding-right: calc(5px + (122 - 5) * ((100vw - 320px) / (1920 - 320)));
-  max-width: 682px;
+  flex: 1;
   border-top: 1px solid var(--silver-color);
   flex-direction: column;
 }
@@ -1887,7 +1870,7 @@ left: 0;
   line-height: 32px;  
 }
 .contacts__map-section {
-  flex-grow: 1;
+  width: 60%;
   border-left: 1px solid var(--silver-color);
 }
 .contacts__map-section .contacts__address {
@@ -2177,6 +2160,9 @@ left: 0;
     padding-right: calc(5px + (222 - 5) * ((100vw - 320px) / (1920 - 320)));
     padding-bottom: 98px;
   }
+  .contacts__map-section {
+    width: 54%;
+  }
   .form__input {
     min-width: 335px;
   }
@@ -2360,7 +2346,7 @@ left: 0;
     top: 36%;
   }
   .contacts__left {
-    padding-right: calc(5px + (150 - 5) * ((100vw - 320px) / (1920 - 320)));
+    padding-right: calc(5px + (145 - 5) * ((100vw - 320px) / (1920 - 320)));
     padding-bottom: 90px
   }
 }
@@ -2831,6 +2817,7 @@ left: 0;
     min-width: 290px;
   }
   .contacts__map-section {
+    width: 100%;
     height: 320px;
   }
   .contacts__address {

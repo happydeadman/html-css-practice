@@ -358,7 +358,6 @@ document.addEventListener('DOMContentLoaded',function(){
 }
 checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animationClass, inputCheckbox);
   //pub checkbox mobile
-
   //projects swiper
   var projectSwiper = new Swiper(".projects__swiper", {
     slidesPerView: 3,
@@ -400,38 +399,59 @@ checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animat
     //tooltip
     // contacts validate
     var phoneSelector = document.querySelector("input[type='tel']");
-
     var im = new Inputmask("+7(999) 999-99-99");
     im.mask(phoneSelector);
 
-    new JustValidate('.contacts__form', {
-      rules: {
-        name: {
-          required: true,
-          minLength: 3,
-          maxLength: 15,
-        },
-        phone: {
-          function: (name, value) => {
-            const phoneNum = phoneSelector.inputmask.unmaskedvalue();
-            return Number(phoneNum) && phoneNum.length === 10;
+
+    let validateForms  = function (selector, successModal, yaGoal) {
+      new JustValidate(selector, {
+        rules: {
+          name: {
+            required: true,
+            minLength: 3,
+            maxLength: 15,
           },
-          required: true
+          phone: {
+            function: (name, value) => {
+              const phoneNum = phoneSelector.inputmask.unmaskedvalue();
+              return Number(phoneNum) && phoneNum.length === 10;
+            },
+            required: true
+          },
         },
-      },
-      messages: {
-        name: {
-          minLength: 'Минимальное число символов - 3',
-          maxLength: 'Маскимальное число символов - 15',
-          required: 'Поле обязательно для заполнения',
+        messages: {
+          name: {
+            minLength: 'Минимальное число символов - 3',
+            maxLength: 'Маскимальное число символов - 15',
+            required: 'Поле обязательно для заполнения',
+          },
+          phone: {
+            function: 'Недопустимый формат',
+            required: 'Поле обязательно для заполнения',
+          },
         },
-        phone: {
-          function: 'Недопустимый формат',
-          required: 'Поле обязательно для заполнения',
-        },
-      },
-      colorWrong: '#D11616',
-    });
+        colorWrong: '#D11616',
+        submitHandler: function(form) {
+          let formData = new FormData(form);
+
+          let xhr = new XMLHttpRequest();
+
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              console.log ('Отправленно')
+            };
+          };
+
+          xhr.open('POST', 'mail.php', true);
+          xhr.send(formData);
+
+          form.reset();
+        }
+      });
+    }
+
+    validateForms('.contacts__form', '.thanks-popup', 'send goal');
+   
     // map
     ymaps.ready(init);
     function init() {
