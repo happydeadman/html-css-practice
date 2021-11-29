@@ -442,7 +442,7 @@ checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animat
             };
           };
 
-          xhr.open('POST', 'mail.php', true);
+          xhr.open('POST', 'src/mail.php', true);
           xhr.send(formData);
 
           form.reset();
