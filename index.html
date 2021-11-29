@@ -2444,7 +2444,8 @@
                         </address>
                         <h4 class="contacts__form-title">Заказать обратный звонок</h4>
                         <form action="src/mail.php" autocomplete="on" method="post"
-                            class="form contacts__form"> -->
+                            class="form contacts__form">
+                            <input type="hidden" name="form_subject" value="Заказанный обратный звонок">
                             <div class="form__mask-container">
                                 <label for="name" class="form__label"><input id="name" type="text" class="form__input"
                                         placeholder="Имя*" data-validate-field="name"></label>
