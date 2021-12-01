@@ -126,6 +126,32 @@ document.addEventListener('DOMContentLoaded',function(){
   },
       });
   // swiper gallery
+  // gallery modal
+  let swiperSlides = document.querySelector(".gallery").querySelectorAll(".swiper-slide");
+  let modal = document.querySelector('.gallery__modal');
+  let modalBtn = modal.querySelector('.modal__close-btn');
+
+  swiperSlides.forEach(el => {
+    el.addEventListener("click", function() {
+      let author = this.querySelector('.swiper-slide__author').textContent;
+      let years = this.querySelector('.swiper-slide__paint-years').textContent;
+      let paintTitle = this.querySelector('.swiper-slide__paint-title').textContent;
+      let modalText = this.querySelector('.swiper-slide__text').textContent;
+      let img = this.querySelector("img");
+      let link = img.getAttribute("src");
+      modal.classList.add("modal-active");
+      modal.querySelector('.modal__author').innerText = author;
+      modal.querySelector('.modal__paint-years').innerText = years;
+      modal.querySelector('.modal__paint-title').innerText = paintTitle;
+      modal.querySelector('.modal__text').innerText = modalText;
+      modal.querySelector("img").setAttribute("src", link);
+    });
+  });
+  modalBtn.addEventListener('click', function() {
+    modal.classList.remove('modal-active');
+  });
+  // gallery modal
+
   // swiper hero
       var heroSwiper = new Swiper(".hero__swiper", {
         loop: true,
@@ -171,6 +197,7 @@ document.addEventListener('DOMContentLoaded',function(){
     btns.forEach (el => {
       el.addEventListener ("click", function(e) {
         const path = e.currentTarget.dataset.path;
+        console.log(path)
         let tabCont = item.querySelector(`[data-target='${path}']`);
         articles.forEach (el => {
           el.classList.remove("catalog__artist-descr--active");
@@ -226,22 +253,7 @@ document.addEventListener('DOMContentLoaded',function(){
     };
   };
   mobileSlider();
-  window.addEventListener('resize', () => {
-    mobileSlider();
-    initPubSwiper();
-  });
-  // const eventsSwiper = new Swiper('.events__list-container', {
 
-  //   pagination: {
-  //     el: ".events__swiper-pagination",
-  //     clickable: true,
-  //     type: "bullets",
-  //     bulletActiveClass: "events__swiper-pagination-bullet-active",
-  //     bulletClass: "events__swiper-pagination-bullet",
-  //     clickableClass: "events__swiper-pagination-clickable",
-  //     currentClass: "events__swiper-pagination-current"
-  //   }
-  // });
   //events Swiper
   //publishers Swiper
   const piblishersSwiper = document.querySelector('.publishers__swiper');
@@ -402,7 +414,6 @@ checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animat
     var im = new Inputmask("+7(999) 999-99-99");
     im.mask(phoneSelector);
 
-
     let validateForms  = function (selector, successModal, yaGoal) {
       new JustValidate(selector, {
         rules: {
@@ -435,12 +446,14 @@ checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animat
           let formData = new FormData(form);
 
           let xhr = new XMLHttpRequest();
-
-          if (xhr.readyState === 4) {
-            if (xhr.status === 200) {
-              console.log ('Отправленно')
+          
+          xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4) {
+              if (xhr.status === 200) {
+                console.log ('Отправленно')
+              };
             };
-          };
+          }
 
           xhr.open('POST', 'src/mail.php', true);
           xhr.send(formData);
@@ -481,4 +494,33 @@ checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animat
       });
     };
       // map
+    //catalog mobile scroll
+    function mobileScroll () {
+      const smoothBtns = document.querySelectorAll('.artist-years__btn');
+      const catalogContainer = document.querySelector('.catalog__container');
+      if (window.innerWidth > 767 && catalogContainer.dataset.mobile == 'true') {
+        catalogContainer.dataset.mobile == 'false'
+      }
+      if (window.innerWidth <= 767 && catalogContainer.dataset.mobile == 'false') {
+        for (let smoothBtn of smoothBtns) {
+          smoothBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const idMoved = e.currentTarget.dataset.path;
+
+            document.querySelector(`[data-target='${idMoved}']`).scrollIntoView({
+              behavior: 'smooth',
+              block: 'start'
+            });
+            catalogContainer.dataset.mobile == 'true';
+          });
+        };
+      };
+    };
+    mobileScroll ();
+    //catalog mobile scroll
+    window.addEventListener('resize', () => {
+      mobileSlider();
+      initPubSwiper();
+      mobileScroll ();
+    });
 });

@@ -637,9 +637,94 @@ input[type=number]{
 }
 /* gallery */
 .gallery {
+  position: relative;
   background:url(../img/gallery/backgroundG.jpg) center center no-repeat;
   background-size: cover;
   color: var(--header-text);
+}
+.gallery__modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.6);
+  backdrop-filter: blur(1px); 
+  z-index: 100;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.gallery__modal.modal-active {
+  display: flex;
+}
+.modal__content {
+  display: flex;
+  transform: translateY(37px);
+  max-width: 900px;
+  min-height: 500px;
+  background-color: var(--header-text);
+  color: var(--main-text);
+}
+.modal__content-left {
+  width: 44.5%;
+}
+.modal__content-left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.modal__content-right {
+  padding: 122px 41px 10px 47px;
+  flex: 1;
+  position: relative;
+}
+.modal__close-btn {
+  align-items: flex-start;
+  position: absolute;
+  right: 20px;
+  top: 21px;
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+.modal__close-btn::after, .modal__close-btn::before {
+  position: absolute;
+  top: 0;
+  content: ' ';
+  height: 18px;
+  width: 1px;
+  background-color: var(--black);
+}
+.modal__close-btn::before {
+  transform: rotate(45deg);
+}
+.modal__close-btn::after {
+  transform: rotate(-45deg);
+}
+.modal__author {
+  margin: 0;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 33px;
+}
+.modal__paint-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+}
+.modal__paint-years {
+  font-size: 12px;
+  line-height: 16px;
+  color: #969696;
+  margin-bottom: 34px;
+}
+.modal__text {
+  font-size: 16px;
+  line-height: 32px;
+}
+.swiper-slide__author, .swiper-slide__paint-title, .swiper-slide__paint-years, .swiper-slide__text {
+  display: none;
 }
 .gallery__container {
   padding: 81px 50px 10px 50px;
@@ -743,9 +828,6 @@ input[type=number]{
 }
 .choices__list--dropdown .choices__item--selectable:after {
   content: none;
-}
-#choices--selectCustom-item-choice-1 {
-  display: none;
 }
 .gallery__note {
   margin-bottom: 60px;
@@ -2092,6 +2174,11 @@ left: 0;
   .gallery-art {
     height: 612px;
   }
+  .modal__content {
+    transform: translateY(42px);
+    max-width: 594px;
+    min-height: 594px;
+  }
   .catalog__artist-descr{
     max-width: 437px;
   }
@@ -2255,6 +2342,13 @@ left: 0;
   .gallery__swiper-section {
     width: 100%;
   }
+  .modal__content {
+    transform: translateY(152px);
+    max-width: 668px;
+  }
+  .modal__content-left {
+    width: 45.2%;
+}
   .catalog__container  {
     padding: 81px 50px 63px 50px;
   }
@@ -2548,9 +2642,34 @@ left: 0;
   .gallery__left {
     margin-bottom: 16px;
   }
+  .gallery__modal {
+    padding: 0 15px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));;
+  }
+  .modal__content {
+    flex-direction: column;
+    transform: translateY(166px);
+  }
+  .modal__content-left {
+    width: 100%;
+    height: 200px;
+  }
+  .modal__content-right {
+    padding: 16px 15px 10px 17px;
+  }
   .catalog__container {
     padding: 52px 15px 36px 15px;
   } 
+  .modal__paint-years {
+  margin-bottom: 4px;
+  }
+  .modal__text {
+    transform: translateX(4px);
+  }
+  .modal__close-btn {
+    right: 11px;
+    top: -192px;
+  }
   .catalog__top {
     margin-bottom: 30px;
     align-items: flex-start;
@@ -2820,8 +2939,10 @@ left: 0;
     width: 100%;
     height: 320px;
   }
+
   .contacts__address {
     display: none;
+
   }
   .contacts__map-section .contacts__address {
     display: block;
