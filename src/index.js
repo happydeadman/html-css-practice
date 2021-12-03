@@ -265,7 +265,6 @@ document.addEventListener('DOMContentLoaded',function(){
       pubSwiper = new Swiper(piblishersSwiper, {
         slidesPerView: 3,
         spaceBetween: 50,
-        loop: true,
         slideClass: 'publishers__item',
         pagination: {
           el: '.publishers__pagination',

@@ -531,10 +531,10 @@ input[type=number]{
 }
 @keyframes hero-anim {
   0% {
-    transform: scale(100%);
+    transform: scale(1);
   }
   100% {
-    transform: scale(105%);
+    transform: scale(1.05);
   }
 }
 .hero__background {
@@ -1691,7 +1691,7 @@ input[type=number]{
   stroke: var(--btn-color);
 }
 .projects__tooltip svg .projects__tooltip-svg-stroke{ 
-  stroke: var(--black);
+  fill: var(--black);
 }
 .projects__tooltip:focus-visible svg .projects__tooltip-svg-circle,
 .projects__tooltip:hover svg .projects__tooltip-svg-circle {
@@ -1701,7 +1701,7 @@ input[type=number]{
   fill: var(--btn-color);
 }
 .projects__tooltip:active:not(:focus-visible) svg .projects__tooltip-svg-stroke {
-  stroke: var(--header-text);
+  fill: var(--header-text);
 }
 .popup {
   display: none;
