@@ -163,9 +163,6 @@ input[type=number]{
   margin-right: 124px;
   margin-right: calc(5px + (124 - 5) * ((100vw - 320px) / (1920 - 320)));
 }
-.header__burger-menu {
-  display: none;
-}
 .header__nav-item {
   position: relative;
   font-size: 18px;
@@ -2055,10 +2052,10 @@ left: 0;
   .header__enter {
     display: none;
   }
-  .header__nav {
+  /* .header__nav {
     display: none;
-  }
-  .header__burger-menu {
+  } */
+  .header__nav {
     position: absolute;
     margin-right: 0;
     display: block;
@@ -2073,7 +2070,7 @@ left: 0;
     z-index: 1;
     transition: opacity .3s ease;
   }
-  .header__burger-menu.overlay {
+  .header__nav.overlay {
     visibility: visible;
     opacity: 1;
   }
@@ -2471,7 +2468,7 @@ left: 0;
     width: 99px;
     height: 23px;
   }
-  .header__burger-menu.overlay--search {
+  .header__nav.overlay--search {
     height: 75px;
     visibility: visible;
     opacity: 1;
@@ -2527,7 +2524,7 @@ left: 0;
     font-size: 16px;
     line-height: 32px;
   }
-  .header__burger-menu {
+  .header__nav {
     padding-left: 15px;
     padding-top: 46px;
   }

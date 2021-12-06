@@ -48,8 +48,14 @@ document.addEventListener('DOMContentLoaded',function(){
   //search
   //resizeHeight
   function resizeBlock () {
-    var newHeigth = document.getElementById("header").offsetHeight + document.getElementById("hero").offsetHeight;
-    document.getElementById("burger-menu").style.height = newHeigth + "px";
+    if (window.innerWidth >= 1201) {
+      document.getElementById("burger-menu").style.height = 'unset';
+    }
+    if (window.innerWidth <= 1200) {
+      var newHeigth = document.getElementById("header").offsetHeight + document.getElementById("hero").offsetHeight;
+      document.getElementById("burger-menu").style.height = newHeigth + "px";
+    }
+
   };
   resizeBlock();
   window.onresize = resizeBlock;
@@ -497,10 +503,11 @@ checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animat
     function mobileScroll () {
       const smoothBtns = document.querySelectorAll('.artist-years__btn');
       const catalogContainer = document.querySelector('.catalog__container');
-      if (window.innerWidth > 767 && catalogContainer.dataset.mobile == 'true') {
-        catalogContainer.dataset.mobile == 'false'
+      if (window.innerWidth > 767 && catalogContainer.dataset.mobile == 'false') {
+        catalogContainer.dataset.mobile == 'true';
       }
-      if (window.innerWidth <= 767 && catalogContainer.dataset.mobile == 'false') {
+      if (window.innerWidth <= 767 && catalogContainer.dataset.mobile == 'true') {
+        catalogContainer.dataset.mobile == 'false';
         for (let smoothBtn of smoothBtns) {
           smoothBtn.addEventListener('click', function(e) {
             e.preventDefault();
@@ -510,7 +517,6 @@ checkboxToggle(pubBtn, labels, labelsList, labelsListActive, labelActive, animat
               behavior: 'smooth',
               block: 'start'
             });
-            catalogContainer.dataset.mobile == 'true';
           });
         };
       };
