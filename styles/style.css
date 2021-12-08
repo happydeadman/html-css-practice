@@ -1006,6 +1006,7 @@ input[type=number]{
 }
 .swiper-button-disabled {
   opacity: .5;
+  pointer-events: none;
 }
 .gallery-swiper__nav {
   margin-top: 22px;
