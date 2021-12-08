@@ -1132,6 +1132,7 @@ input[type=number]{
   font-size: 24px;
   font-weight: 600;
   line-height: 32px;
+  cursor: pointer;
   border-top: 1px solid var(--silver-color);
   border-bottom: 1px solid var(--silver-color);
   transition: color .3s ease, border-color .3s ease;
