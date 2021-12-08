@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded',function(){
             grid: {
               rows: 1
             },
-            spaceBetween: 0
+            spaceBetween: 10
           },
           767: {
             slidesPerView: 2,
